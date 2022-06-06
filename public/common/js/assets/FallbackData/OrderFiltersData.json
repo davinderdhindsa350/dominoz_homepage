@@ -1,0 +1,35 @@
+{
+  "data": [
+    {
+      "viewType": "toggle",
+      "position": 1,
+      "title": "Veg Only",
+      "type": "VEG",
+      "group": "FILTER"
+    },
+    {
+      "viewType": "toggle",
+      "position": 2,
+      "title": "Non Veg Only",
+      "type": "NONVEG",
+      "group": "FILTER"
+    },
+    {
+      "viewType": "sort",
+      "position": 8,
+      "title": "Price High to low",
+      "type": "HIGH_TO_LOW",
+      "group": "SORT"
+    },
+    {
+      "viewType": "sort",
+      "position": 9,
+      "title": "Price Low to High",
+      "type": "LOW_TO_HIGH",
+      "group": "SORT"
+    }
+  ],
+  "moduleProps": {
+    "type": "FILTERS"
+  }
+}

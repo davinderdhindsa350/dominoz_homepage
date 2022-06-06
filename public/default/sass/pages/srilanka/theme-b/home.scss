@@ -1,0 +1,18 @@
+/** theme imports **/
+@import "../../../partials/theme/global-variables";
+@import "../../../partials/theme/srilanka/theme-default/global/variables";
+@import "../../../partials/theme/srilanka/theme-default/home/variables";
+@import "../../../partials/theme/srilanka/theme-b/global/variables";
+@import "../../../partials/theme/srilanka/theme-b/home/variables";
+@import "../../../partials/theme/common-icon-config";
+/** vendor imports **/
+// @import "../../../partials/vendors/angular";
+/** all helpers, all base, all components/common, all layout **/
+@import "../../../partials/all-partials";
+/** optional components imports **/
+@import "../../../partials/components/optional/auto-complete";
+@import "../../../partials/components/optional/calender";
+
+/** page specific components imports **/
+@import "../../../partials/components/home/common/all";
+@import "../../../partials/components/home/srilanka/all";

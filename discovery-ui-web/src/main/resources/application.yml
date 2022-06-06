@@ -1,0 +1,131 @@
+server.port: 8021
+server.servlet.context-path: /jfl-discovery-ui
+app.version: '@project.version@'
+spring.application.name: jfl-discovery-ui
+discovery.appName: Discovery-ui
+discovery.appVersion: @timestamp@
+#discovery.buildTimeStamp: @timestamp@
+discovery.domainSiteContextConfig: '{"localhost":"jflcms","nextgen-ind-dev-2-external-1115817132.ap-south-1.elb.amazonaws.com":"jflcms"}'
+discovery.defaultPlatform: pwa
+discovery.defaultLang: en
+discovery.defaultCategory: "/"
+discovery.resourcePath: "public/dist"
+discovery.resourceDomain: "http://localhost:8021/jfl-discovery-ui"
+discovery.genericErrorMessage: "Server failed to process request"
+#discovery.service-base-url: http://localhost:8021/jfl-discovery-service/ve1/
+discovery.service-base-url: http://api-dev-2.dominosindia.in/jfl-discovery-service/ve1
+#discovery.service-base-url: http://nextgen-dev-internal.dominosindia.in/jfl-discovery-service/ve1
+discovery.custom-config.environmentIdentifier: dev
+# ${ENVIRONMENT_IDENTIFIER}
+discovery.actuatorEndpointsUser: admin
+#${ACTUATOR_ENDPOINTS_USER}
+discovery.actuatorEndpointsUserPassword: password
+#${ACTUATOR_ENDPOINTS_USER_PASSWORD}
+discovery.apiKey: d2aeb489bb8df385
+banner.charset: UTF-8
+banner.location: classpath:/banner.txt
+management.endpoint.health.show-details: "ALWAYS"
+management.endpoints.web.exposure.include: "*"
+spring.jackson.default-property-inclusion: non_null
+spring.cloud.config.import-check.enabled: false
+server.servlet.context-parameters.defaultHtmlEscape: true
+########################################## thymeleaf properties ########################################################
+spring.thymeleaf.cache: true
+spring.thymeleaf.check-template: true
+spring.thymeleaf.check-template-location: true
+spring.thymeleaf.enabled: true
+spring.thymeleaf.enable-spring-el-compiler: true
+spring.thymeleaf.encoding: UTF-8
+spring.thymeleaf.excluded-view-names:
+spring.thymeleaf.mode: HTML
+spring.thymeleaf.prefix: WEB-INF/app/
+spring.thymeleaf.servlet.content-type: text/html
+spring.thymeleaf.suffix: .html
+spring.thymeleaf.view-names: app/*
+
+# http-client config
+jubl.http-client.connectTimeout: 15000
+# ${HTTP_CLIENT_CONNECT_TIMEOUT}
+jubl.http-client.requestTimeout: 15000
+#${HTTP_CLIENT_REQUEST_TIMEOUT}
+jubl.http-client.socketTimeout: 20000
+#${HTTP_CLIENT_SOCKET_TIMEOUT}
+jubl.http-client.maxConnTotal: 2000
+#${HTTP_CLIENT_MAX_CONN_TOTAL}
+jubl.http-client.maxConnPerRoute: 1000
+#${HTTP_CLIENT_MAX_CONN_PER_ROUTE}
+
+################################################ common properties end #################################################
+################################################ common properties end #################################################
+################################################ common properties end #################################################
+################################################ common properties end #################################################
+
+################################################ local properties start ################################################
+################################################ local properties start ################################################
+################################################ local properties start ################################################
+spring.profiles.active: dev
+---
+spring.profiles: local
+discovery.apiKey: d2aeb489bb8df385
+
+################################################ local properties end ##################################################
+################################################ local properties end ##################################################
+################################################ local properties end ##################################################
+
+################################################ development properties start ##########################################
+################################################ development properties start ##########################################
+################################################ development properties start ##########################################
+---
+spring.profiles: dev
+discovery.apiKey: 1be746dc5827cf05
+
+################################################ development properties end ############################################
+################################################ development properties end ############################################
+################################################ development properties end ############################################
+
+################################################ qa properties start ##########################################
+################################################ qa properties start ##########################################
+################################################ qa properties start ##########################################
+---
+spring.profiles: stage
+discovery.apiKey: 1be746dc5827cf05
+
+################################################ qa properties end ############################################
+################################################ qa properties end ############################################
+################################################ qa properties end ############################################
+
+################################################ uat properties start ################################################
+################################################ uat properties start ################################################
+################################################ uat properties start ################################################
+
+---
+spring.profiles: uat
+discovery.apiKey: 7369702fc2a34276
+################################################ uat properties end ##################################################
+################################################ uat properties end ##################################################
+################################################ uat properties end ##################################################
+
+
+################################################ rfs properties start ################################################
+################################################ rfs properties start ################################################
+################################################ rfs properties start ################################################
+
+---
+spring.profiles: rfs
+discovery.apiKey: d2aeb489bb8df385
+################################################ rfs properties end ##################################################
+################################################ rfs properties end ##################################################
+################################################ rfs properties end ##################################################
+
+
+################################################ production properties start #############################################
+################################################ production properties start #############################################
+################################################ production properties start #############################################
+
+---
+spring.profiles: production
+discovery.apiKey: d2aeb489bb8df385
+
+################################################ production properties end #############################################
+################################################ production properties end #############################################
+################################################ production properties end #############################################

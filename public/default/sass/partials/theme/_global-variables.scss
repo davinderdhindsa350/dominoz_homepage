@@ -1,0 +1,112 @@
+/** global Options **/
+$enable-flex: false !default;
+$enable-rounded: true !default;
+$enable-shadows: false !default;
+$enable-gradients: false !default;
+$enable-transitions: false !default;
+$enable-hover-media-query: false !default;
+$enable-grid-classes: true !default;
+
+$header-height: 70px;
+
+/** screen breakpoints **/
+$screen: 1188px !default;
+$screen-xxs: 320px !default;
+$screen-xs: 480px !default;
+$screen-sm: 640px !default;
+$screen-md: 768px !default;
+$screen-lg: 990px !default;
+$screen-xlg: $screen;
+$gt: 24px;
+
+/** 
+Grid breakpoints - Define the minimum and maximum dimensions at which your layout will change,
+adapting to different screen sizes, for use in media queries.     
+**/
+$grid-breakpoints: (
+  // Extra Extra small screen / phone
+  xxs: $screen-xxs,
+  // Extra small screen / phone
+  xs: $screen-xs,
+  // Small screen / phone
+  sm: $screen-sm,
+  // Medium screen / tablet
+  md: $screen-md,
+  // Large screen / desktop
+  lg: $screen-lg,
+  // Extra large screen / wide desktop
+  xl: $screen-xlg
+) !default;
+$grid-columns: 12 !default;
+$grid-gutter-width: $gt !default; // 24px
+
+/** Grid containers - Define the maximum width of `.container` for different screen sizes. **/
+$container-max-widths: (
+  xxs: $screen-xs,
+  xs: $screen-xs,
+  sm: $screen-sm,
+  md: $screen-md,
+  lg: $screen-lg,
+  xl: $screen-xlg,
+) !default;
+
+/** Font Icons **/
+$fonts-folder-path: "../fonts/";
+$global-font-path: "#{$fonts-folder-path}global/";
+$fonticon-prefix: "jfi";
+
+/** eof Font Icons **/
+
+/** Images **/
+$images-folder-path: "../images/";
+$global-image-path: "#{$images-folder-path}global/" !default;
+
+/** Fonts **/
+$font-family-default: "roboto-regular-webfont";
+$font-family-base: "#{$font-family-default}", "Arial, Helvetica, sans-serif" !default; // 400
+$font-family-medium: "roboto-medium-webfont"; // 500
+$font-family-bold: "roboto-bold-webfont"; // 700
+
+$font-family-rs: "RupeeSign" !default;
+$font-family-fontello: "fontello";
+
+$font-size: 12;
+$font-size-base: 12px; // 12px
+$font-size-xs: 0.75em !default; // 9px
+$font-size-sm: 0.833em !default; // 10px
+$font-size-md: 1.167em !default; // 14px
+$font-size-lg: 1.333em !default; // 16px
+$font-size-xlg: 1.5em !default; // 18px
+$fs-8: 0.667em; //8px
+$fs-9: $font-size-xs; //9px
+$fs-10: $font-size-sm; //10px
+$fs-11: 0.917em; //11px
+$fs-12: $font-size-base; //12px
+$fs-13: 1.083em; //13px
+$fs-14: $font-size-md; //14px
+$fs-15: 1.25em; //15px
+$fs-16: $font-size-lg; //16px
+$fs-17: 1.417em; //17px
+$fs-18: $font-size-xlg; //18px
+$fs-19: 1.583em; //19px
+$fs-20: 1.667em; //20px
+$fs-22: 1.833em; //22px
+$fs-24: 2em; //24px
+
+/** eof Fonts **/
+
+$mobile-menu-width: 240px;
+
+$common-border-radius: 6px;
+
+$notification-theme-name: ("error");
+$notification-theme-values: (
+  default: (
+    background-color: #38af00,
+    text-color: #fff,
+  ),
+  error: (
+    background-color: #e31837,
+    text-color: #fff,
+  ),
+);

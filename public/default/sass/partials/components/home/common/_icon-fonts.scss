@@ -1,0 +1,32 @@
+@import "icon-fonts-list-home";
+
+[class^="#{$fonticon-prefix}-"],
+[class*=" #{$fonticon-prefix}-"] {
+    @include create-font-icon(before, true);
+}
+
+// Setup a class name for each icon
+@each $fontIconInfo in $font-icons-list {
+	$icon-name:nth($fontIconInfo, 1);
+    $iconHexaCode:nth($fontIconInfo, 2);
+    $icon-font-size:nth($fontIconInfo, 3);
+    $icon-color:nth($fontIconInfo, 4);
+	
+    .#{$fonticon-prefix}-#{$icon-name}:before {
+        content: $iconHexaCode;
+		@if ($icon-font-size != '') {
+			font-size: #{$icon-font-size};
+		}
+		@if ($icon-color != '') {
+			color: #{$icon-color};
+		}
+		
+    }
+}
+
+
+
+
+
+
+

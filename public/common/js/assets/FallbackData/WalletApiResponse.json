@@ -1,0 +1,223 @@
+{
+    "PIZZAPAL": {
+        "wallet": {
+          "totalBalance": 10,
+          "status": "Success",
+          "loyaltyEnabled": true,
+          "data": [
+            {
+              "title": "Pizza Pals Points",
+              "subTitle": "Pay upto 10% of your next order value.",
+              "leftIcon": "others/loyalty/wallet_pizzapals_icon.png",
+              "detailTitle": "Pizza Pals Balance",
+              "detailIcon": "others/loyalty/ledger_pizzapals.png",
+              "amount": 10,
+              "cta": {
+                "label": "Loyalty",
+                "links": [
+                  {
+                    "href": "/wallet-service/ve2/wallet/statements/LOYALTY/pageNo",
+                    "action": "walletLedger"
+                  },
+                  {
+                    "href": "/widgetcontent/loyalty_widget",
+                    "action": "home_widget"
+                  }
+                ]
+              },
+              "type": "LOYALTY",
+              "enabled": true
+            },
+            {
+              "title": "Promo Points",
+              "subTitle": "Use this to pay for your next order. Unrestricted Usage.",
+              "leftIcon": "others/loyalty/wallet_promo_point_icon.png",
+              "detailTitle": "Promo Money Balance",
+              "detailIcon": "others/loyalty/ledger_promo.png",
+              "cta": {
+                "label": "Promo Money",
+                "links": [
+                  {
+                    "href": "/wallet-service/ve2/wallet/statements/PROMOTION/pageNo",
+                    "action": "walletLedger"
+                  }
+                ]
+              },
+              "type": "PROMOTION",
+              "enabled": false
+            },
+            {
+              "title": "Refund Points",
+              "subTitle": "Use this to pay for your next order. Unrestricted Usage.",
+              "leftIcon": "others/loyalty/wallet_refund_icon.png",
+              "detailTitle": "Refund Balance",
+              "detailIcon": "others/loyalty/ledger_refund.png",
+              "amount": 0,
+              "cta": {
+                "label": "Refund Money",
+                "links": [
+                  {
+                    "href": "/wallet-service/ve2/wallet/statements/CASHBACK/pageNo",
+                    "action": "walletLedger"
+                  }
+                ]
+              },
+              "type": "CASHBACK",
+              "enabled": true
+            }
+          ],
+          "howItWorks": [
+            {
+              "title": "How can I use Domino's Wallet?",
+              "text": " Just add items to your cart and any eligible amount will be automatically deducted from the total. You just need to pay the difference (if any)"
+            },
+            {
+              "title": "How can I check my wallet history?",
+              "text": "You can view wallet history by tapping on the balance strip(s) above. Within the history page, you can check details of credit and debit."
+            },
+            {
+              "title": "Does the money in my wallet have any validity?",
+              "text": "**Yes, each amount credited in the wallet has limited validity. You can check the expiry for each entry in the history section. You can access history by tapping the balance strip(s) above"
+            },
+            {
+              "title": "How can I earn money in the Wallet?",
+              "text": "Glad you asked, watch this space closely - something big is coming soon!"
+            },
+            {
+              "title": "Can I add Money into the Wallet?",
+              "text": "No, Domino's Wallet is an instrument that allows us to process instant refunds and add any promotional discount to make your Domino's purchases easy and seamless."
+            },
+            {
+              "title": "Can I choose not to use the Wallet?",
+              "text": "**Yes, if you have balance that you wish to save, you can uncheck the Wallet on Cart before proceeding to make payment. However, it is advisable to use wallet as any money in it has limited expiry."
+            }
+          ],
+          "mobileNo": "9643809395"
+        }
+      },
+      "CHEESY": {
+        "loyaltyProgram": {
+          "type": "POTP1",
+          "title": "Cheesy Rewards",
+          "mobile": "9667534370",
+          "enrollmentStatus": "ACTIVE",
+          "enrollmentDate": "2021-12-24 20:45:20",
+          "enrollmentExpiryDate": "2022-12-24 20:45:20",
+          "balance": {
+            "overall": {
+              "points": 1900,
+              "amount": "1263.5",
+              "brandedPoints": 19
+            },
+            "burnable": {
+              "points": 1800,
+              "amount": "1197",
+              "brandedPoints": 18,
+              "freeItems": 3
+            }
+          },
+          "programConfig": {
+            "loyaltyProgramCode": "POTP1",
+            "earnPointsPerOrder": 100,
+            "earnMOV": 350,
+            "burnMOV": 0,
+            "itemRedeemPoints": 600,
+            "slicesPerPie": 6,
+            "priceBand": 399
+          }
+        },
+        "wallet": {
+          "totalBalance": 6662,
+          "status": "Success",
+          "loyaltyEnabled": false,
+          "data": [
+            {
+              "title": "Pizza Pals Points",
+              "subTitle": "Points for Pizza Lovers like you! Pay 10% of your next order value",
+              "leftIcon": "others/loyalty/wallet_pizzapals_icon.png",
+              "detailTitle": "Pizza Pals Balance",
+              "detailIcon": "others/loyalty/ledger_pizzapals.png",
+              "cta": {
+                "label": "Loyalty",
+                "links": [
+                  {
+                    "href": "/wallet-service/ve2/wallet/statements/LOYALTY/pageNo",
+                    "action": "walletLedger"
+                  },
+                  {
+                    "href": "/widgetcontent/loyalty_widget",
+                    "action": "home_widget"
+                  }
+                ]
+              },
+              "type": "LOYALTY",
+              "enabled": false
+            },
+            {
+              "title": "Promo Points",
+              "subTitle": "Use this to pay for your next order. Unrestricted Usage.",
+              "leftIcon": "others/loyalty/wallet_promo_point_icon.png",
+              "detailTitle": "Promo Money Balance",
+              "detailIcon": "others/loyalty/ledger_promo.png",
+              "cta": {
+                "label": "Promo Money",
+                "links": [
+                  {
+                    "href": "/wallet-service/ve2/wallet/statements/PROMOTION/pageNo",
+                    "action": "walletLedger"
+                  }
+                ]
+              },
+              "type": "PROMOTION",
+              "enabled": false
+            },
+            {
+              "title": "Refund Points",
+              "subTitle": "Use this to pay for your next order. Unrestricted Usage.",
+              "leftIcon": "others/loyalty/wallet_refund_icon.png",
+              "detailTitle": "Refund Balance",
+              "detailIcon": "others/loyalty/ledger_refund.png",
+              "amount": 6662,
+              "cta": {
+                "label": "Refund Money",
+                "links": [
+                  {
+                    "href": "/wallet-service/ve2/wallet/statements/CASH/pageNo",
+                    "action": "walletLedger"
+                  }
+                ]
+              },
+              "type": "CASH",
+              "enabled": true
+            }
+          ],
+          "howItWorks": [
+            {
+              "title": "How can I use Domino's Wallet?",
+              "text": " Just add items to your cart and any eligible amount will be automatically deducted from the total. You just need to pay the difference (if any)"
+            },
+            {
+              "title": "How can I check my wallet history?",
+              "text": "You can view wallet history by tapping on the balance strip(s) above. Within the history page, you can check details of credit and debit."
+            },
+            {
+              "title": "Does the money in my wallet have any validity?",
+              "text": "**Yes, each amount credited in the wallet has limited validity. You can check the expiry for each entry in the history section. You can access history by tapping the balance strip(s) above"
+            },
+            {
+              "title": "How can I earn money in the Wallet?",
+              "text": "Glad you asked, watch this space closely - something big is coming soon!"
+            },
+            {
+              "title": "Can I add Money into the Wallet?",
+              "text": "No, Domino's Wallet is an instrument that allows us to process instant refunds and add any promotional discount to make your Domino's purchases easy and seamless."
+            },
+            {
+              "title": "Can I choose not to use the Wallet?",
+              "text": "**Yes, if you have balance that you wish to save, you can uncheck the Wallet on Cart before proceeding to make payment. However, it is advisable to use wallet as any money in it has limited expiry."
+            }
+          ],
+          "mobileNo": "9667534370"
+        }
+      }
+}

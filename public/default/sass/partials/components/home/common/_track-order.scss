@@ -1,0 +1,79 @@
+.main-confirm-order {
+  width: 100%;
+  min-height: 96px;
+  display: flex;
+  justify-content: space-between;
+  background: #ffffff;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  border: 1px solid #DDDDDD;
+  .confirm-order {
+    // color: $color-white;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    > .label-icon-parent {
+      > .label-icon {
+        > .star-icon {
+          align-items: center;
+          justify-content: center;
+        }
+        > .check-color {
+          background: $color-success !important;
+        }
+        > .parent-base {
+          display: flex;
+          flex-direction: column;
+          align-items: inherit;
+          margin-left: 10px;
+          > .label-track {
+            > .label-track-child {
+              text-overflow: ellipsis;
+              max-width: 180px;
+            }
+            > .price-label {
+              color: $color-grey-light;
+            }
+          }
+          > .need-help-text{
+            margin-top: 14px;
+            > .underline-help {
+              padding-top: 2px;
+              border-bottom: 1px dashed $color-secondary;
+              cursor: pointer;
+              color: $color-secondary;
+            }
+          }
+        }
+      }
+      > .jfi-cross {
+        color: $color-grey;
+      }
+    }
+
+    > .label-icon div {
+      @include three-dot;
+      max-width: 100%;
+    }
+    > .label-icon small {
+      color: $color-grey-light;
+    }
+  }
+  > .arrow-icon {
+    min-width: 28px;
+    > .jfi-arrow-line {
+      color: #005491;
+      &::before {
+        transform: rotate(270deg);
+      }
+    }
+  }
+}
+
+.track-order-icon{
+  width: 72px;
+  height: 72px;
+  display: block;
+}

@@ -1,0 +1,69 @@
+.pers-offers-wrap {
+  .carousel__viewport {
+    overflow: scroll;
+    scrollbar-width: none;
+    scrollbar-gutter: auto;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    > .carousel__track {
+      gap: 14px;
+      padding-left: 12px;
+      > .carousel__slide {
+        width: auto !important;
+        align-items: normal;
+      }
+      .carousel__slide:first-child:nth-last-child(1) {
+        @include my-screen(very-small) {
+          width: 100% !important;
+        }
+        .pers-offer {
+          width: 100% !important;
+        }
+      }
+    }
+  }
+  .pers-offer {
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 12px;
+    margin-bottom: 24px;
+    height: 60px;
+    color: $color-white;
+    @include prefix(
+      "linear-gradient",
+      (180deg, #038069 0%, #04997e 100%),
+      moz webkit
+    );
+    @include border-radius(8px, 8px, 8px, 8px);
+    .offer-desc {
+      @include three-dot;
+      max-width: 222px;
+      margin-top: 4px;
+    }
+    .offer-title {
+      @include three-dot;
+      max-width: 170px;
+      margin-top: -2px;
+    }
+  }
+  .lottie-offer-icon {
+    margin-top: -350px;
+  }
+  .offer-applied-popup {
+    width: 90vw;
+    margin-top: -90%;
+    z-index: 30;
+    position: fixed;
+    will-change: transform;
+  }
+}
+
+
+.pers-offers-wrap .carousel__slide:nth-child(7n+1) .pers-offer  {background: linear-gradient(180deg, #0050ae 0%, #1879d2 100%);}
+.pers-offers-wrap .carousel__slide:nth-child(7n+2) .pers-offer  {background: linear-gradient(180deg, #C66002 0%, #D67A15 100%);}
+.pers-offers-wrap .carousel__slide:nth-child(7n+3) .pers-offer  {background: linear-gradient(180deg, #038069 0%, #04997E 100%);}
+.pers-offers-wrap .carousel__slide:nth-child(7n+4) .pers-offer  {background: linear-gradient(180deg, #A73070 0%, #D2609E 100%);}
+.pers-offers-wrap .carousel__slide:nth-child(7n+5) .pers-offer  {background: linear-gradient(180deg, #0C7724 0%, #37AB51 100%);}
+.pers-offers-wrap .carousel__slide:nth-child(7n+6) .pers-offer  {background: linear-gradient(180deg, #3B3097 0%, #5F56AE 100%);}
+.pers-offers-wrap .carousel__slide:nth-child(7n+7) .pers-offer  {background: linear-gradient(180deg, #75371D 0%, #9C5233 100%);}

@@ -1,0 +1,3 @@
+@function my-theme-path($dir, $theme){
+  @return 'theme/' + $dir + $theme
+}

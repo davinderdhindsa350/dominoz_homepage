@@ -1,0 +1,70 @@
+{
+  "userAddresses": [
+    {
+      "address_id": 853212197,
+      "building_number": "sdfaf hyt",
+      "customers_mobile": "6743527856",
+      "customer_address_name": "Other",
+      "street_name": "adsg gddg gdsg",
+      "area_level0": "JHJHG",
+      "city_region": "Sector 66",
+      "area_level2": " ",
+      "area_level1": " ",
+      "city": "Noida",
+      "longitude": 78.37499116736028,
+      "latitude": 29.601598174485417,
+      "formatted_address": "C-1768, Sector 43, Sushant lok 1, Greater Gurgaon",
+      "address_status": "A",
+      "zippr_flag": false,
+      "address_type": "S51",
+      "discovery_source": "auto_gps",
+      "source": "mobile-android-9.6.10",
+      "updated_at": 1640861631434
+    },
+    {
+      "address_id": 833126966,
+      "building_number": "27/23-(5)",
+      "customers_mobile": "6743527856",
+      "customer_address_name": "Home",
+      "street_name": "psf ferf , fer, edr",
+      "area_level0": "sddef Nagar",
+      "city_region": "feqf Nagar",
+      "area_level2": " ",
+      "area_level1": " ",
+      "city": "Noida",
+      "longitude": 81.28820864856243,
+      "latitude": 16.47664412967884,
+      "formatted_address": "1ferwf fvre87erf, vehqer8987fe vce",
+      "address_status": "A",
+      "zippr_flag": false,
+      "address_type": "S45",
+      "discovery_source": "auto_gps",
+      "source": "mobile-android-9.5.5",
+      "updated_at": 1637213872000
+    }
+  ],
+  "userInfoLoggedIn": {
+    "headers": {
+      "isLoggedIn": true,
+      "source": "PWA18#upsellA",
+      "deliveryType": "D",
+      "credentials": {
+        "accessKeyId": "fkjgghhhgjhkgjhkbjh",
+        "refreshToken": "dagfdahgjkladhgljk"
+      },
+      "cartId": "85768576",
+      "userId": "8798798",
+      "status": "SUCCESS"
+    },
+    "userData": {
+      "lastName": "gjsdkhkj",
+      "firstName": "jhkasgfjaf",
+      "cartId": "85768576",
+      "mobile": "789689687",
+      "userId": "8798798",
+      "email": "fkhdgkjfhgdkjhfk@outlook.com",
+      "frequency": "H",
+      "isVip": false
+    }
+  }
+}

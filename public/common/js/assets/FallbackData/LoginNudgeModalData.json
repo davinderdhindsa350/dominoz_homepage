@@ -1,0 +1,17 @@
+{
+  "data": [
+    {
+      "imageUrl": "/banner-1.png",
+      "desc": "Your Favourite<br> Cheesiest Pizzas"
+    },
+    {
+      "imageUrl": "/banner-2.png",
+      "desc": "Great Taste<br> Delivered Safe"
+    },
+    {
+      "imageUrl": "/banner-3.png",
+      "desc": "Tastiest Sides to go<br> with your Pizza"
+    }
+  ],
+  "logoUrl": "/domino_icon.png"
+}

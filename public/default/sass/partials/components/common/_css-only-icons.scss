@@ -1,0 +1,48 @@
+.css-hyphen:before {
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 0;
+    border: solid #999;
+    border-width: 1px 0;
+}
+
+.css-cross:before {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 12px;
+    border: solid #999;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+.css-cross:after {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 12px;
+    border: solid #999;
+    border-width: 0 2px 2px 0;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    position: absolute;
+    left: 0px;
+}
+
+.css-cross {
+    position: relative;
+}
+
+.checkmark:before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 12px;
+    border: solid #2BAD63;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+

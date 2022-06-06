@@ -1,0 +1,40 @@
+.horizontal-menu {
+    position: relative;
+    .carousel__viewport {
+      overflow: scroll;
+      scrollbar-width: none;
+      scrollbar-gutter: auto;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      > .carousel__track{
+        gap: 12px;
+        padding-left: 12px;
+        > .carousel__slide{
+          flex-shrink: unset;
+        }
+      }
+    }
+    .horizontal-item {
+        width: 80px;
+        border-radius: 8px;
+        height: 80px;
+        filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.1));
+    }
+    .horizontal-item-tag {
+        position: absolute;
+        // top: 85%;
+        // left: 15%;
+        // top: 73%;
+        // left: 10%;
+        top: 64%;
+        left: 16%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        font-size: 10px;
+        text-align: center;
+    }
+    .menu-img-wrap {
+      width: 100%;
+    }
+  }

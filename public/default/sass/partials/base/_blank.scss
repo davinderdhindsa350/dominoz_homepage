@@ -1,0 +1,99 @@
+@keyframes placeHolderShimmer{
+    0%{
+        background-position: -468px 0
+    }
+    100%{
+        background-position: 468px 0
+    }
+}
+
+.blank-holder {
+    .blank{
+        background: #FCFCFC !important;
+        color: #FCFCFC !important;
+        position: relative;
+       // line-height: 12px;
+        &:after{
+            animation-duration: 1.5s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: infinite;
+            animation-name: placeHolderShimmer;
+            animation-timing-function: linear;
+            background: #fff;
+            background: linear-gradient(to right, #f1f1f1 8%, #D7D7D7 18%, #f1f1f1 33%);
+            background-size: 800px 104px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            float: left;
+            content: '';
+        }
+
+        &.lh12{
+            line-height: 12px !important;
+        }
+
+        &.lh14{
+            line-height: 14px !important;
+        }
+
+        &.lh16{
+            line-height: 16px !important;
+        }
+
+        &.lh18{
+            line-height: 18px !important;
+        }
+
+        &.lh20{
+            line-height:20px !important;
+        }
+
+        &.round{
+            &:after{
+                border-radius: 50%;
+            }
+        }
+    }
+}
+
+@mixin focusAnim($class, $type, $name, $duration){
+	.#{$class} {
+		animation:#{$type};
+		-o-animation:#{$type};
+		-moz-animation:#{$type};
+		-webkit-animation:#{$type};
+
+		animation-name:#{$name};
+		-o-animation-name:#{$name};
+		-moz-animation-name:#{$name};
+		-webkit-animation-name:#{$name};
+
+		animation-duration:#{$duration};
+		-o-animation-duration:#{$duration};
+		-moz-animation-duration:#{$duration};
+		-webkit-animation-duration:#{$duration};
+	}
+}
+
+@include focusAnim('anim-shadow', 'ease-in', 'targetFocus', 6s);
+
+@-webkit-keyframes targetFocus{
+    0% {
+		-webkit-box-shadow: 0 0 0 0 rgba(74,33,137,1);
+        -moz-box-shadow: 0 0 0 0 rgba(74,33,137,1);
+        box-shadow: 0 0 0 0 rgba(74,33,137,1);
+    }
+    50%{
+		-webkit-box-shadow: 0px 0px 15px 0px rgba(74,33,137,1);
+        -moz-box-shadow: 0px 0px 15px 0px rgba(74,33,137,1);
+        box-shadow: 0px 0px 15px 0px rgba(74,33,137,1);
+	}
+    100%{
+		-webkit-box-shadow: 0 0 0 0 rgba(74,33,137,1);
+        -moz-box-shadow: 0 0 0 0 rgba(74,33,137,1);
+        box-shadow: 0 0 0 0 rgba(74,33,137,1);
+	}
+};

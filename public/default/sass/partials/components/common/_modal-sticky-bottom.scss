@@ -1,0 +1,56 @@
+// Bottom stick modal
+
+.modal-mask {
+  .modal-container {
+    transition: all 0.5s ease;
+  }
+
+  &.show,
+  &.hiding {
+    display: block;
+  }
+
+  &.sticky-bottom {
+    &.show {
+      .modal-container {
+        animation: modal-sticky-bottom-animation 0.5s ease;
+        bottom: 0;
+        margin-bottom: 0;
+        top: auto;
+        @include prefix("transform", translateY(0%), moz webkit);
+        @include border-radius(6px, 6px, 0, 0);
+        margin-top: auto;
+        position: absolute;
+        overflow-y: auto;
+        max-height: calc(91vh - 56px) !important;
+        height: auto !important;
+      }
+    }
+
+    &.hiding {
+      .modal-container {
+        animation: modal-sticky-bottom-animation-out 0.25s ease;
+        bottom: 0;
+        margin-bottom: 0;
+        top: auto;
+      }
+    }
+  }
+}
+
+@keyframes modal-sticky-bottom-animation {
+  from {
+    bottom: -100%;
+  }
+  to {
+    bottom: 0;
+  }
+}
+@keyframes modal-sticky-bottom-animation-out {
+  from {
+    bottom: 0;
+  }
+  to {
+    bottom: -100%;
+  }
+}

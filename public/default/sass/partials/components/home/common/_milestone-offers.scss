@@ -1,0 +1,189 @@
+.milestone-offer {
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  margin-bottom: 24px;
+  margin-right: 0;
+  .ms-title{
+    max-width: 50px;
+  }
+  height: 60px;
+  color: $color-white;
+  @include prefix(
+    "linear-gradient",
+    (180deg, #c66002 0%, #d67a15 100%),
+    moz webkit
+  );
+
+  @include border-radius(8px, 8px, 8px, 8px);
+}
+.order-no {
+  opacity: 60%;
+  font-size: 10px;
+  line-height: 18px;
+}
+.ms-timeline {
+  > li {
+    position: relative;
+    padding-left: 16px;
+    &.pl28 {
+      padding-left: 28px;
+      &:first-child {
+        padding-left: 0;
+      }
+    }
+    &:first-child {
+      padding-left: 0;
+      .border-arrow-img,
+      .border-arrow-img-grey {
+        display: none;
+      }
+    }
+  }
+}
+.border-arrow-img {
+  background: url("../images/global/line-arrow-right.png");
+  background-repeat: no-repeat;
+  width: 7px;
+  height: 46px;
+  position: absolute;
+  left: 6px;
+  top: -5px;
+}
+.border-arrow-img-grey {
+  background: url("../images/global/line-arrow-right-grey.png");
+  background-repeat: no-repeat;
+  width: 7px;
+  height: 36px;
+  position: absolute;
+  left: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0 5px;
+}
+
+.ms-offer-pop-content {
+  max-width: 345px;
+  margin-left: auto;
+  margin-right: auto;
+  .ms-timeline {
+    background: #f3eded;
+    border: 1px solid #dddddd;
+    box-sizing: border-box;
+
+    @include border-radius(6px, 6px, 6px, 6px);
+    > li {
+      text-align: center;
+      width: 90px;
+      padding-top: 2px;
+      padding-bottom: 2px;
+      padding-left: 0;
+    }
+  }
+  .btn {
+    width: 100%;
+  }
+}
+.btn-wrap {
+  padding-top: 16px;
+}
+.pad-fixed-botm {
+  padding-bottom: 75px;
+}
+.fixed-botm {
+  position: fixed;
+  will-change: transform;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  padding: 16px;
+  background: $color-white;
+  border-top: 1px solid $color-border;
+}
+.coupan-dets {
+  padding: 3px 6px;
+  margin: 12px 0 16px;
+  border: 0.5px dashed $color-grey;
+}
+.code-applied-dets {
+  @extend .coupan-dets;
+  border: 0.5px solid #009017;
+  background-color: #009017;
+  @include border-radius(6px, 6px, 6px, 6px);
+  color: $color-white;
+  width: 100%;
+  justify-content: space-between;
+}
+.remove-code {
+  cursor: pointer;
+  border-bottom: 1px dashed $color-white;
+}
+.ms-offer-details {
+  > h3 {
+    font-size: 12px;
+  }
+}
+.logo-box {
+  width: 40px;
+  height: 35px;
+  border: 1px solid $color-border;
+  @include border-radius(6px, 6px, 6px, 6px);
+  overflow: hidden;
+  margin-bottom: 16px;
+  .logo-sm-img {
+    background-image: url("../images/global/jfl-logo-sm.png");
+    width: 100%;
+    height: 33px;
+    display: block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    left: 5px;
+    position: relative;
+    top: -1px;
+  }
+}
+
+.offer-ico-holder {
+  width: 84px;
+  height: 84px;
+  background-color: #008015;
+  border: 1px solid #008015;
+  text-align: center;
+  position: relative;
+  margin: 15px auto;
+  @include border-radius(50%, 50%, 50%, 50%);
+  .border-grad {
+    background-image: linear-gradient(to bottom, #3bc051 0%, #008015 100%);
+    content: "";
+    position: absolute;
+    top: -2px;
+    bottom: -2px;
+    right: -2px;
+    left: -2px;
+    z-index: -1;
+    border-radius: inherit;
+  }
+  .jfi-offer-tag {
+    font-size: 30px;
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+
+    .ico-percent {
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 20px;
+    }
+  }
+}
+.ms-offer-details {
+  padding-top: 16px;
+  border-top: 1px solid $color-border;
+}

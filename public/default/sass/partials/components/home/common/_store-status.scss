@@ -1,0 +1,58 @@
+.store-status {
+  background: #ffe5b2;
+  border: 1.5px solid #fabb3f;
+  border-radius: 8px;
+  .icon-container {
+    border-radius: 50%;
+    background: #bd8006;
+    margin-left: 12px;
+    margin-right: 10px;
+    width: fit-content;
+    height: fit-content;
+    i {
+      color: $color-white;
+    }
+  }
+
+  p {
+    color: #773f20;
+    span {
+      color: $color-fb;
+    }
+  }
+}
+
+.current-location-status {
+  position: relative;
+  background: #d3e3ff;
+  border: 1.5px solid #79a8fb;
+  border-radius: 8px;
+  > i {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+  }
+  .icon-container {
+    border-radius: 50%;
+    background: #2660c0;
+    margin-left: 12px;
+    margin-right: 10px;
+    width: fit-content;
+    height: fit-content;
+    i {
+      color: $color-white;
+    }
+  }
+
+  p {
+    color: #254780;
+    span {
+      color: $color-fb;
+    }
+    &.current-location-map-link {
+      display: inline-block;
+      color: #2e2e2e;
+      border-bottom: 1px dashed #2e2e2e;
+    }
+  }
+}

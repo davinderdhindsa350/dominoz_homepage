@@ -1,0 +1,77 @@
+.login-modal-wrap {
+  .login-modal {
+    position: relative;
+  }
+  .modal-container {
+    padding: 0;
+  }
+  .login-top {
+    height: calc(100vh - 145px);
+    width: 100vw;
+    .carousel__slide {
+      display: block;
+    }
+    .login-nudge-img {
+      width: 100%;
+      img {
+        width: 100%;
+      }
+    }
+    .login-nudge-desc {
+      display: block;
+      text-align: center;
+      line-height: 28px;
+      margin: 20px 0;
+      font-size: $fs-22;
+    }
+  }
+  .login-bottom {
+    position: fixed;
+    will-change: transform;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1;
+    background: #fff;
+    padding: 16px;
+  } 
+  .login-cta {
+    width: 244px;
+    padding: 11px;
+    background-color: #65AB0B;
+    border-color: #65AB0B;
+    margin: 16px 0;
+    display: inline-block;
+    font-size: $fs-14;
+  }
+  .dot-flashing-container {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    > .dot-flashing {
+      background-color: transparent;
+      border: 1px solid $color-white;
+      width: 10px;
+      height: 10px;
+      margin-right: 6px;
+      @include border-radius(50%, 50%, 50%, 50%);
+    }
+    .active-slide-dot {
+      background-color: $color-secondary;
+    }
+  }
+  .domino-logo-img {
+    width: 177px;
+    display: block;
+    position: absolute;
+    top: 62px;
+    left: 50%;
+    transform: translateX(-50%);
+    > img {
+      width: 100%;
+    }
+  }
+}
+

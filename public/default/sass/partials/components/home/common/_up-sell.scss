@@ -1,0 +1,58 @@
+.main-upsell {
+  transition: all 0.3s ease;
+  box-shadow: 0px 4px 12px rgb(0 0 0 / 10%);
+  > .upsell-body {
+    box-sizing: border-box;
+  
+    > .upsell-btn-wrap {
+      overflow-x: auto;
+      white-space: nowrap;
+      padding-bottom: 10px;
+      .upsell-btn {
+        border: 1px solid $color-border;
+        box-sizing: border-box;
+        padding: 7px 8px 8px 8px;
+        border-radius: 6px;
+        min-height: 32px;
+        background: #ffffff;
+        margin-right: 8px;
+        margin-top: 8px;
+        font-size: 12px;
+        box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+      }
+      .selected-upsell-item {
+        background: #ecf7ff;
+        border: 1px solid $color-secondary;
+        .selected-upsell-item-no-display {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.upsell-transition-enter-to.main-upsell {
+  animation: slide-ltr-animation 0.35s ease;
+}
+
+.upsell-transition-leave-to.main-upsell {
+  animation: slide-rtl-animation 0.35s ease;
+}
+@keyframes slide-ltr-animation {
+  0% {
+    -webkit-transform: translateX(-325px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+  }
+}
+
+@keyframes slide-rtl-animation {
+  0% {
+    -webkit-transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-325px);
+  }
+}

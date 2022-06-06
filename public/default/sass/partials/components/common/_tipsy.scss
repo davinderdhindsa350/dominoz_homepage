@@ -1,0 +1,203 @@
+.tipsy-holder {
+	position: relative;
+}
+
+.tipsy {
+	position: absolute;
+	z-index: 99;
+	display: none;
+
+	&.from-right-top {
+		right: 0;
+		bottom: 100%;
+		margin: 0 0 15px;
+	}
+
+	&.from-bottom-top {
+		right: 0;
+		bottom: 100%;
+		margin: 0 0 15px;
+	}
+
+	&.from-right-bottom {
+		right: 0;
+		top: 100%;
+		margin: 15px 0 0;
+	}
+
+	&.from-right-left {
+		right: 80%;
+		bottom: 100%;
+		margin: 0 0 15px;
+	}
+
+	&.crp-fare-info {
+		bottom: 60%;
+		margin: 0 0 15px;
+		right: 80px;
+	}
+}
+
+.tipsy-holder:hover .tipsy,
+.tipsy-holder.hover .tipsy {
+	display: block;
+}
+
+.tipsy-holder.attached-with-link {
+	&:hover .tipsy {
+		display: none;
+	}
+
+	&.hover .tipsy,
+	.attached-tipsy-link:hover+.tipsy {
+		display: block;
+	}
+}
+
+.tipsy.active {
+	position: relative;
+	display: block;
+}
+
+.tipsy-content {
+	position: relative;
+	background: $color-white;
+	padding: 5px;
+	border: 1px solid #cdcecf;
+	@include border-radius(4px, 4px, 4px, 4px);
+	box-shadow:0 0 5px 1px #cdcecf;
+	-webkit-box-shadow:0 0 5px 1px #cdcecf;
+	-moz-box-shadow:0 0 5px 1px #cdcecf;
+
+	&:before,
+	&:after {
+		content: '';
+		position: absolute;
+		z-index: 1;
+	}
+
+	&:after {
+		z-index: 2;
+	}
+
+	&.bottom-right {
+		&:before {
+			border-left: 11px solid transparent;
+			border-right: 11px solid transparent;
+			border-top: 11px solid #cdcecf;
+			right: 15px;
+			top: 100%;
+		}
+
+		&:after {
+			border-left: 10px solid transparent;
+			border-right: 10px solid transparent;
+			border-top: 10px solid $color-white;
+			right: 16px;
+			top: 100%;
+		}
+	}
+
+	&.top-right {
+		&:before {
+			border-top: 11px solid transparent;
+			border-bottom: 11px solid transparent;
+			left: 100%;
+			top: 15px;
+		}
+
+		&:after {
+			border-top: 10px solid transparent;
+			border-bottom: 10px solid transparent;
+			left: 100%;
+			top: 15px;
+		}
+	}
+
+	&.bottom-right-top {
+		&:before {
+			border-left: 11px solid transparent;
+			border-right: 11px solid transparent;
+			border-bottom: 11px solid #cdcecf;
+			right: 15px;
+			top: -11px;
+		}
+
+		&:after {
+			border-left: 10px solid transparent;
+			border-right: 10px solid transparent;
+			border-bottom: 10px solid $color-white;
+			right: 15px;
+			top: -10px;
+		}
+	}
+
+	&.info {
+		font-size: 12px;
+		color: $color-base;
+		min-width: 35px;
+	}
+
+	&.theme-blue {
+		background: $tipsy-color;
+		border: 1px solid $tipsy-color;
+		color: $color-white;
+
+		&.bottom-right {
+			&:before {
+				border-top: 11px solid $tipsy-color;
+			}
+
+			&:after {
+				border-top: 10px solid $tipsy-color;
+			}
+		}
+	}
+
+	&.theme-dark-blue {
+		background: $color-primary;
+		border: 1px solid $color-primary;
+		color: $color-white;
+
+		&.bottom-right {
+			&:before {
+				border-top: 11px solid $color-primary;
+			}
+
+			&:after {
+				border-top: 10px solid $color-primary;
+			}
+		}
+	}
+
+	&.theme-black {
+		background: rgba(0, 0, 0, 0.75);
+		border: none;
+		color: $color-white;
+
+		&:before,
+		&:after {
+			@include opacity(0.75);
+		}
+
+		&.top-right {
+			&:before {
+				border-left: 11px solid #000;
+			}
+
+			&:after {
+				border-left: 10px solid #000;
+			}
+		}
+
+		&.bottom-right {
+			&:before {
+				border-top: 11px solid #000;
+			}
+
+			&:after {
+				border-top: 10px solid #000;
+			}
+		}
+	}
+}

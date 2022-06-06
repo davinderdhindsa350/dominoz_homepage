@@ -1,0 +1,43 @@
+.arrow {
+	position: absolute;
+	top: 50%;
+	width: 8px;
+	height: 8px;
+	background: transparent;
+	border-top: 2px solid $color-base;
+	border-right: 2px solid $color-base;
+	box-shadow: 0 0 0 lightgray;
+	transition: all 200ms ease;
+	
+	&.left {
+		left: 0;
+		transform: translate3d(0,-50%,0) rotate(-135deg);
+	}
+
+	&.right {
+		right: 0;
+		transform: translate3d(0,-50%,0) rotate(45deg);
+	}
+	
+	&:hover {
+		border-color: $color-primary;
+		box-shadow: 1px -1px 0 $color-base;
+	}
+	
+	&:before { // for better hit area
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-45%,-55%) rotate(45deg);
+		width: 200%;
+        height: 200%;
+        
+		box-shadow:0px 1px 5px 0.3px rgba(0, 0, 0, 0.18);
+		-webkit-box-shadow:0px 1px 5px 0.3px rgba(0, 0, 0, 0.18);
+		-moz-box-shadow:0px 1px 5px 0.3px rgba(0, 0, 0, 0.18);
+        @include border-radius(50%, 50%, 50%, 50%);
+        padding: 14px;
+        
+	}
+}

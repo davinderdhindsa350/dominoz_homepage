@@ -1,0 +1,111 @@
+.payment-offer-item {
+  background: linear-gradient(180deg, #0050ae 0%, #1879d2 100%);
+
+  .corner-image {
+    width: 72px;
+    height: 32px;
+    line-height: 32px;
+    right: 0px;
+    position: absolute;
+    background: $color-white;
+    border: 0.5px solid $color-border;
+    border-radius: 0 8px 0 6px;
+    padding: 2px;
+    .banners-item {
+      margin: auto;
+      max-width: 92%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  height: 131px;
+  width: 274px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  justify-content: space-between;
+
+  .upper {
+    align-items: flex-start;
+    .title {
+      color: $color-white;
+    }
+    .description {
+      color: $color-white;
+      text-align: start;
+    }
+  }
+  .lower {
+    justify-content: space-between;
+    align-items: end;
+    .more-details {
+      color: $color-white;
+      border-bottom: 1px dashed #ffffff;
+    }
+  }
+  .description {
+    @include multiple-line-ellipse-v2(2);
+  }
+}
+
+
+.payment-offer-wrap {
+  .lottie-offer-icon {
+    margin-top: -350px;
+  }
+  .offer-applied-popup {
+    width: 90vw;
+    margin-top: -90%;
+    z-index: 30;
+    position: fixed;
+    will-change: transform;
+  }
+  .carousel__viewport {
+    overflow: scroll;
+    scrollbar-width: none;
+    scrollbar-gutter: auto;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    > .carousel__track {
+      gap: 14px;
+      padding-left: 12px;
+      > .carousel__slide {
+        width: auto !important;
+      }
+      .carousel__slide:first-child:nth-last-child(1) {
+        @include my-screen(very-small) {
+          width: calc(100% - 12px) !important;
+        }
+        .payment-offer-item {
+          width: 100% !important;
+        }
+      }
+    }
+  }
+}
+
+.logo-box-po {
+  width: fit-content;
+  height: 35px;
+  border: 1px solid $color-border;
+  @include border-radius(6px, 6px, 6px, 6px);
+  overflow: hidden;
+  margin-bottom: 16px;
+  padding: 3px;
+  text-align: center;
+  .po-logo {
+    position: relative;
+    height: 100%;
+  }
+}
+
+
+.payment-offer-wrap .carousel__slide:nth-child(7n+1) .payment-offer-item {background: linear-gradient(180deg, #0050ae 0%, #1879d2 100%);}
+.payment-offer-wrap .carousel__slide:nth-child(7n+2) .payment-offer-item {background: linear-gradient(180deg, #C66002 0%, #D67A15 100%);}
+.payment-offer-wrap .carousel__slide:nth-child(7n+3) .payment-offer-item {background: linear-gradient(180deg, #038069 0%, #04997E 100%);}
+.payment-offer-wrap .carousel__slide:nth-child(7n+4) .payment-offer-item {background: linear-gradient(180deg, #A73070 0%, #D2609E 100%);}
+.payment-offer-wrap .carousel__slide:nth-child(7n+5) .payment-offer-item {background: linear-gradient(180deg, #0C7724 0%, #37AB51 100%);}
+.payment-offer-wrap .carousel__slide:nth-child(7n+6) .payment-offer-item {background: linear-gradient(180deg, #3B3097 0%, #5F56AE 100%);}
+.payment-offer-wrap .carousel__slide:nth-child(7n+7) .payment-offer-item {background: linear-gradient(180deg, #75371D 0%, #9C5233 100%);}

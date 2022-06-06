@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+	<properties>
+	    <property name="PATTERN" value="%d{yyyy-MM-dd HH:mm:ss}#[%X{requestId}]-[%X{remoteAddr}] [%thread] %-5level %logger{36} - %msg%n"/>
+		<property name="DEV_HOME" value="${sys:DEV_HOME:-target/log}"></property>
+		<property name="LOG_LEVEL" value="${sys:LOG_LEVEL:-info}"></property>
+		<property name="APPENDER" value="${sys:APPENDER:-STDOUT}"></property>
+	</properties>
+	<Appenders>
+		<Console name="STDOUT" target="SYSTEM_OUT">
+			<PatternLayout pattern="${PATTERN}" />
+		</Console>
+
+		<RollingFile name="FILE-AUDIT"
+			fileName="${DEV_HOME}/server.log"
+			filePattern="${DEV_HOME}/archived/server.%d{yyyy-MM-dd}.%i.log">
+			<PatternLayout>
+				<pattern>%d{yyyy-MM-dd HH:mm:ss}#[%X{requestId}]-[%X{remoteAddr}] [%thread] %-5level %logger{36} - %msg%n</pattern>
+			</PatternLayout>
+			<Policies>
+				<SizeBasedTriggeringPolicy size="10MB" />
+				<TimeBasedTriggeringPolicy />
+			</Policies>
+		</RollingFile>
+
+		<RollingFile name="FILE-ERROR"
+			fileName="${DEV_HOME}/error.log"
+			filePattern="${DEV_HOME}/archived/server.%d{yyyy-MM-dd}.%i.log">
+			<PatternLayout>
+				<pattern>%d{yyyy-MM-dd HH:mm:ss}#[%X{requestId}]-[%X{remoteAddr}] [%thread] %-5level %logger{36} - %msg%n</pattern>
+			</PatternLayout>
+			<Policies>
+				<SizeBasedTriggeringPolicy size="10MB" />
+				<TimeBasedTriggeringPolicy />
+			</Policies>
+		</RollingFile>
+	</Appenders>
+
+	<Loggers>
+		<!-- LOG everything at INFO level -->
+		<Root level="${LOG_LEVEL}">
+			<AppenderRef ref="${APPENDER}" />
+		</Root>
+
+	</Loggers>
+
+</Configuration>

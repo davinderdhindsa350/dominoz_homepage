@@ -1,0 +1,82 @@
+@include fontFace($font-family-default, normal, normal);
+@include fontFace($font-family-bold, normal, normal);
+@include fontFace($font-family-medium, normal, normal);
+
+@include fontFace($font-family-rs, normal, normal);
+
+@include fontFaceFontello($font-family-fontello);
+
+* {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.rs,
+.no-rs {
+  font-style: normal;
+}
+.rs {
+  font-family: $font-family-rs;
+  font-style: normal;
+}
+.fs-xlg {
+  font-size: $font-size-xlg;
+}
+.fs-lg {
+  font-size: $font-size-lg;
+}
+.fs-md {
+  font-size: $font-size-md;
+}
+.fs-sm {
+  font-size: $font-size-sm;
+}
+.fs-xs {
+  font-size: $font-size-xs;
+}
+.fs-8 {
+  font-size: $fs-8;
+}
+.fs-9 {
+  font-size: $fs-9;
+}
+.fs-10 {
+  font-size: $fs-10;
+}
+.fs-11 {
+  font-size: $fs-11;
+}
+.fs-12 {
+  font-size: $fs-12;
+}
+.fs-13 {
+  font-size: $fs-13;
+}
+.fs-14 {
+  font-size: $fs-14;
+}
+.fs-15 {
+  font-size: $fs-15;
+}
+.fs-16 {
+  font-size: $fs-16;
+}
+.fs-17 {
+  font-size: $fs-17;
+}
+.fs-18 {
+  font-size: $fs-18;
+}
+.fs-19 {
+  font-size: $fs-19;
+}
+.fs-20 {
+  font-size: $fs-20;
+}
+.fs-22 {
+  font-size: $fs-22;
+}
+.fs-24 {
+  font-size: $fs-24;
+}

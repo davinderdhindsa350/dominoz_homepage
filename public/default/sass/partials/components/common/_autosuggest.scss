@@ -1,0 +1,124 @@
+.search-content-holder {
+  .ac_results {
+    text-align: left;
+    padding: 0px;
+    border: 1px solid $color-border;
+    border-bottom: 1px solid $color-border;
+    background-color: #fff;
+    overflow: hidden;
+    box-shadow: none;
+    z-index: 100;
+
+    @include my-screen(small) {
+      width: 100% !important;
+    }
+
+    @include visible-screen(359px, 479px) {
+      width: 100% !important;
+    }
+
+    ul {
+      border-radius: 0 !important;
+      -moz-border-radius: 0 !important;
+      -webkit-border-radius: 0 !important;
+      width: 100%;
+      list-style-position: outside;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      &.heading {
+        cursor: default;
+      }
+
+      strong {
+        color: $color-secondary;
+        font-family: $font-family-bold;
+      }
+
+      &.ac_over {
+        background-color: #f4f4f4;
+      }
+    }
+
+    .scrollable .vertical.scroll-bar {
+      background: rgba(0, 0, 0, 0.15);
+      -moz-border-radius: 6px;
+      -webkit-border-radius: 6px;
+      border-radius: 6px;
+      width: 7px;
+      position: absolute;
+      right: 0;
+      z-index: 9;
+      cursor: pointer;
+    }
+
+    // -moz-appearance: scrollbar-small;
+
+    .thumb {
+      background: rgba(0, 0, 0, 0.45);
+      -moz-border-radius: 10px;
+      -webkit-border-radius: 10px;
+      border-radius: 10px;
+      width: 100%;
+      min-height: 10px;
+    }
+  }
+
+  .ac_loading {
+    background: $color-white url("../images/global/loader-ajax-sm.gif")
+      no-repeat 91% center;
+  }
+
+  .mac-scroll {
+    overflow: hidden;
+  }
+
+  li {
+    .ac_airport {
+      float: left;
+      width: 72%;
+
+      .ac_cityname {
+        margin: 0;
+        font-size: 14px;
+        position: relative;
+        padding: 0 0 2px 0;
+      }
+
+      .ac_airportname {
+        margin: 0;
+        font-size: 12px;
+        color: #666;
+      }
+
+      strong {
+        font-weight: normal;
+      }
+    }
+
+    .ac_country {
+      float: right;
+      font-size: 13px;
+      max-width: 28%;
+      padding-right: 20px;
+      position: relative;
+      text-align: right;
+      line-height: 1.2;
+
+      .country-flg {
+        margin: -7px 0 0;
+        position: absolute;
+        right: 0;
+        top: 50%;
+      }
+
+      strong {
+        font-weight: normal;
+        color: inherit !important;
+      }
+    }
+  }
+}

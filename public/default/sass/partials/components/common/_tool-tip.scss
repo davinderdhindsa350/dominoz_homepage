@@ -1,0 +1,302 @@
+.toolTip-cover {
+  position: relative;
+}
+.toolTip {
+  opacity: 0;
+  visibility: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+  width: auto;
+  height: auto;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  background-color: #54698d;
+  padding: 8px 12px;
+  border-radius: 4px;
+  color: $color-white;
+  font-size: $fs-11;
+  line-height: 14px;
+  transition: 300ms;
+  z-index: 99;
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    backface-visibility: visible;
+  }
+  &.tip-top {
+    bottom: calc(100% + 8px);
+  }
+  &.tip-top {
+    bottom: calc(100% + 8px);
+    &.arrow-bottom-left {
+      left: 10px;
+    }
+    &.arrow-bottom-right {
+      right: 10px;
+    }
+    &.arrow-bottom-center {
+      left: 50%;
+      @include translate($left: -50%, $top: 10px);
+    }
+  }
+  &.tip-bottom {
+    top: calc(100% + 8px);
+    &.arrow-top-left {
+      left: 10px;
+    }
+    &.arrow-top-right {
+      right: 10px;
+    }
+    &.arrow-top-center {
+      left: 50%;
+      @include translate($left: -50%, $top: 10px);
+    }
+  }
+  &.tip-top:before {
+    @include triangle(
+      8px,
+      8px,
+      0px,
+      8px,
+      #54698d,
+      transparent,
+      transparent,
+      transparent
+    );
+  }
+  &.tip-bottom:before {
+    @include triangle(
+      0px,
+      8px,
+      8px,
+      8px,
+      transparent,
+      transparent,
+      #54698d,
+      transparent
+    );
+  }
+  &.arrow-bottom-left:before {
+    bottom: -8px;
+    left: 10px;
+  }
+  &.arrow-bottom-right:before {
+    bottom: -8px;
+    right: 10px;
+  }
+  &.arrow-bottom-center:before {
+    bottom: -8px;
+    left: 50%;
+    @include translateX(-50%);
+  }
+  &.arrow-top-left:before {
+    top: -8px;
+    left: 10px;
+  }
+  &.arrow-top-right:before {
+    top: -8px;
+    right: 10px;
+  }
+  &.arrow-top-center:before {
+    top: -8px;
+    left: 50%;
+    @include translateX(-50%);
+  }
+  &.slide-top {
+    transform: translateY(10px);
+    &.arrow-bottom-center.active {
+      @include translate($left: -50%, $top: 0px);
+    }
+    &.active {
+      @include translateY(0px);
+    }
+  }
+  &.slide-bottom {
+    transform: translateY(10px);
+    &.arrow-top-center.active {
+      @include translate($left: -50%, $top: 0px);
+    }
+    &.active {
+      @include translateY(0px);
+    }
+  }
+}
+
+.similartip {
+  background-color: $color-grey;
+  font-size: $fs-8;
+  padding: 3px 10px;
+  &.tip-bottom {
+    top: calc(100% - 8px);
+  }
+  &.tip-bottom:before {
+    @include triangle(
+      0px,
+      4px,
+      4px,
+      4px,
+      transparent,
+      transparent,
+      $color-grey,
+      transparent
+    );
+  }
+  &.arrow-top-center:before {
+    top: -4px;
+  }
+
+  &.tip-top {
+    bottom: calc(100% + 12px);
+  }
+  &.tip-top:before {
+    @include triangle(
+      4px,
+      4px,
+      0px,
+      4px,
+      $color-grey,
+      transparent,
+      transparent,
+      transparent
+    );
+  }
+  &.arrow-bottom-center:before {
+    bottom: -4px;
+  }
+}
+
+.over-tip:hover {
+  & ~ .toolTip {
+    opacity: 1;
+    visibility: visible;
+    backface-visibility: visible;
+  }
+}
+.over-tip:hover {
+  .toolTip {
+    opacity: 1;
+    visibility: visible;
+    backface-visibility: visible;
+  }
+}
+
+.black-toolTip {
+  opacity: 0;
+  visibility: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+  width: auto;
+  height: auto;
+  min-width: 270px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  background-color: $color-black;
+  padding: 12px 16px;
+  @include border-radius(3px, 3px, 3px, 3px);
+  color: $color-white;
+  font-size: $fs-12;
+  line-height: 18px;
+  font-family: $font-family-default;
+  transition: 300ms;
+  z-index: 99;
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    backface-visibility: visible;
+  }
+  &.tip-top {
+    bottom: calc(100% + 3px);
+  }
+  &.tip-top {
+    bottom: calc(100% + 3px);
+    &.arrow-bottom-left {
+      left: 10px;
+    }
+    &.arrow-bottom-right {
+      right: 10px;
+    }
+    &.arrow-bottom-center {
+      left: 50%;
+      @include translate($left: -50%, $top: 10px);
+    }
+  }
+  &.tip-bottom {
+    top: calc(100% + 3px);
+    &.arrow-top-left {
+      left: -10px;
+    }
+    &.arrow-top-right {
+      right: -10px;
+    }
+    &.arrow-top-center {
+      left: 50%;
+      @include translate($left: -50%, $top: 10px);
+    }
+  }
+  &.tip-top:before {
+    @include triangle(
+      8px,
+      12px,
+      0px,
+      8px,
+      $color-black,
+      transparent,
+      transparent,
+      transparent
+    );
+  }
+  &.tip-bottom:before {
+    @include triangle(
+      0px,
+      8px,
+      12px,
+      8px,
+      transparent,
+      transparent,
+      $color-black,
+      transparent
+    );
+  }
+  &.arrow-bottom-left:before {
+    bottom: -12px;
+    left: 10px;
+  }
+  &.arrow-bottom-right:before {
+    bottom: -12px;
+    right: 10px;
+  }
+  &.arrow-bottom-center:before {
+    bottom: -12px;
+    left: 50%;
+    @include translateX(-50%);
+  }
+  &.arrow-top-left:before {
+    top: -12px;
+    left: 10px;
+  }
+  &.arrow-top-right:before {
+    top: -12px;
+    right: 10px;
+  }
+  &.arrow-top-center:before {
+    top: -12px;
+    left: 50%;
+    @include translateX(-50%);
+  }
+  &.slide-top {
+    transform: translateY(10px);
+    &.arrow-bottom-center.active {
+      @include translate($left: -50%, $top: 0px);
+    }
+    &.active {
+      @include translateY(10px);
+    }
+  }
+  &.slide-bottom {
+    transform: translateY(10px);
+    &.arrow-top-center.active {
+      @include translate($left: -50%, $top: 0px);
+    }
+    &.active {
+      @include translateY(10px);
+    }
+  }
+}

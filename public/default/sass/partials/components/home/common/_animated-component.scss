@@ -1,0 +1,21 @@
+.dot-flashing-container {
+  display: inline-flex;
+  flex-direction: row;
+  gap: 3px;
+  > .dot-flashing {
+    width: 4px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: rgba(248, 248, 248, 0.64);
+    color: rgba(248, 248, 248, 0.64);
+  }
+  .white-background {
+    background-color: $color-white !important;
+  }
+  .grey-background{
+    background-color: $color-grey !important;
+  }
+  .black-background{
+    background-color: $color-black !important;
+  }
+}

@@ -1,0 +1,139 @@
+{
+    "data": [
+      {
+        "categoryType": 0,
+        "data": [
+          {
+            "image": "pepsi_new_20190312.png",
+            "defaultPrice": 60,
+            "buttonText": "ADD TO CART",
+            "code": "BEV0119",
+            "description": "Sparkling and Refreshing Beverage",
+            "defaultCrustPrice": 0,
+            "disableClick": false,
+            "isCustomizable": false,
+            "sortOrder": 0,
+            "name": "Pepsi (500ml)",
+            "isReplaceable": false,
+            "id": 4260,
+            "productType": 0
+          },
+          {
+            "image": "mountain_dew.jpg",
+            "defaultPrice": 60,
+            "buttonText": "ADD TO CART",
+            "code": "BEV0121",
+            "description": "Strong and Refreshing",
+            "defaultCrustPrice": 0,
+            "disableClick": false,
+            "isCustomizable": false,
+            "sortOrder": 0,
+            "name": "Mountain Dew (500ml)",
+            "isReplaceable": false,
+            "id": 4280,
+            "productType": 0
+          },
+          {
+            "image": "slice.jpg",
+            "defaultPrice": 50,
+            "buttonText": "ADD TO CART",
+            "code": "BEV0125",
+            "description": "Great Mango Taste",
+            "defaultCrustPrice": 0,
+            "disableClick": false,
+            "isCustomizable": false,
+            "sortOrder": 0,
+            "name": "Slice (350ml)",
+            "isReplaceable": false,
+            "id": 4290,
+            "productType": 0
+          },
+          {
+            "image": "7up_new_2202.jpg",
+            "defaultPrice": 60,
+            "buttonText": "ADD TO CART",
+            "code": "BEV0120",
+            "description": "Refreshing clear drink with a natural lemon flavor",
+            "defaultCrustPrice": 0,
+            "disableClick": false,
+            "isCustomizable": false,
+            "sortOrder": 0,
+            "name": "7Up (500ml)",
+            "isReplaceable": false,
+            "id": 4300,
+            "productType": 0
+          },
+          {
+            "image": "mirinda.jpg",
+            "defaultPrice": 60,
+            "buttonText": "ADD TO CART",
+            "code": "BEV0123",
+            "description": "Delicious Orange Flavoured beverage",
+            "defaultCrustPrice": 0,
+            "disableClick": false,
+            "isCustomizable": false,
+            "sortOrder": 0,
+            "name": "Mirinda (500ml)",
+            "isReplaceable": false,
+            "id": 4310,
+            "productType": 0
+          },
+          {
+            "image": "lit.jpg",
+            "defaultPrice": 50,
+            "buttonText": "ADD TO CART",
+            "code": "BEV0124",
+            "description": "Naturally Refreshing, Not Too Sweet, No Gas",
+            "defaultCrustPrice": 0,
+            "disableClick": false,
+            "isCustomizable": false,
+            "sortOrder": 0,
+            "name": "Lipton Ice Tea (250ml)",
+            "isReplaceable": false,
+            "id": 4320,
+            "productType": 0
+          },
+          {
+            "image": "pepsi_black.png",
+            "defaultPrice": 60,
+            "buttonText": "ADD TO CART",
+            "code": "BEV0126",
+            "description": "Maximum Taste Zero Calories",
+            "defaultCrustPrice": 0,
+            "disableClick": false,
+            "isCustomizable": false,
+            "sortOrder": 0,
+            "name": "Pepsi Black Can",
+            "isReplaceable": false,
+            "id": 4340,
+            "productType": 0
+          },
+          {
+            "image": "7up_nimbooz.jpg",
+            "defaultPrice": 50,
+            "buttonText": "ADD TO CART",
+            "code": "BEV0139",
+            "description": "NIMBOOZ",
+            "defaultCrustPrice": 0,
+            "disableClick": false,
+            "isCustomizable": false,
+            "sortOrder": 0,
+            "name": "NIMBOOZ (250Ml)",
+            "isReplaceable": false,
+            "sizeCode": ".",
+            "id": 4498,
+            "productType": 0
+          }
+        ],
+        "categoryName": "Beverages",
+        "categoryId": 5
+      }
+    ],
+    "moduleProps": {
+      "title": "Beverages",
+      "type": "VERTICAL_PRODUCT_SCROLL",
+      "cardType": "video/static",
+      "aspectRatio": 1,
+      "itemsInScreen": 1.75
+    }
+  }

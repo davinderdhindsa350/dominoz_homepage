@@ -1,0 +1,114 @@
+.btn {
+  padding: 9px 22px 8px 22px;
+  font-size: $fs-18;
+  line-height: normal;
+  cursor: pointer;
+  border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: $action-btn-bg;
+  border: 1px solid $action-btn-border;
+  @include border-radius(6px, 6px, 6px, 6px);
+  color: $action-btn-color;
+  text-align: center;
+
+  &.medium {
+    padding: 11px 12px 11px 12px;
+    font-size: $fs-14;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    &.medium:hover {
+      padding: 11px 12px 11px 12px;
+      font-size: $fs-14;
+    }
+  }
+
+  &.small{
+    padding: 4px 8px;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    &.small:hover {
+      padding: 11px 12px 11px 12px;
+      font-size: $fs-14;
+    }
+  }
+
+  &.disabled,
+  &.disabled:hover,
+  &[disabled="disabled"],
+  &[disabled="disabled"]:hover {
+    @include opacity(0.4);
+    cursor: default;
+    pointer-events: none;
+    background: $color-grey;
+    color: $color-white;
+    border-color: $color-grey;
+    cursor: not-allowed;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      @include opacity(1);
+      background: $action-btn-bg-hover;
+      border: 1px solid $action-btn-border-hover;
+      color: $action-btn-color-hover;
+    }
+  }
+
+  
+  &.active {
+    @include opacity(1);
+    background: $action-btn-bg-hover;
+    border: 1px solid $action-btn-border-hover;
+    color: $action-btn-color-hover;
+  }
+}
+
+/* dark buttons */
+.btn-dark {
+  background: #2b4f71;
+  border: 1px solid #2b4f71;
+  color: $color-white;
+  @extend .btn;
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      @include opacity(0.85);
+    }
+  }
+
+}
+
+.line-btn {
+  cursor: pointer;
+  border: 1px solid $color-white;
+  color: $color-white;
+  font-family: $font-family-bold;
+  font-size: $fs-18;
+  padding: 8px 12px;
+  background-color: transparent;
+  @include border-radius(6px, 6px, 6px, 6px);
+  &.dark {
+    border-color: $color-base;
+    color: $color-base;
+  }
+  &.medium {
+    padding: 11px 12px 11px 12px;
+    font-size: $fs-14;
+  }
+  &.sm {
+    font-size: $fs-12;
+    padding: 8px 12px;
+  }
+  &.red {
+    border-color: $color-success;
+    color: $color-white;
+    background-color: $color-success;
+  }
+}
+
+.text-cta {
+  font-style: italic;
+  padding-bottom: 2px;
+  border-bottom: 1px solid #999;
+}

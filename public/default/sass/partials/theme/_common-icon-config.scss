@@ -1,0 +1,27 @@
+$default-common-icon-class-prefix:'';
+$default-common-icon-grid-width:60;
+$default-common-icon-grid-height:60;
+
+$common-icon-sprite-width:600;
+$common-icon-sprite-height:240;
+
+$common-icon-standrad-height:16;
+$common-icon-standrad-width:16;
+
+$gutter-for-icon-with-label:6;
+
+$custom-size-prefix:'size';
+$icon-sizes: ('default', 12, 24, 30, 40);
+
+$icon-position-classes : (
+	'icon-pos-top-center',
+	'icon-pos-right-center',
+	'icon-pos-right-top',
+	'icon-pos-right-bottom',
+	'icon-pos-bottom-center',
+	'icon-pos-left-top',
+	'icon-pos-left-center',
+	's'
+);
+
+$default-common-icon-sprite-class:'icon';

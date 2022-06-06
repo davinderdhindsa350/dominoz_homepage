@@ -1,0 +1,55 @@
+.loader-dot {
+	display: inline-block;
+	height: 5px;
+	width: 5px;
+	border-radius: 50%;
+	background: $color-primary;
+	position: relative;
+	margin-left: 10px;
+	margin-right: 10px;
+	/*@include animation-name(opacity);
+	@include animation-duration(1s);
+	@include animation-iteration-count(infinite);
+	@include animation-delay(100ms);*/
+	&:after, 
+	&:before{
+		content:"";
+		display: inline-block;
+		height: 5px;
+		width: 5px;
+		border-radius: 50%;
+		background: $color-primary;
+		position: absolute;
+		top: 0;
+		/*@include animation-name(opacity);
+		@include animation-duration(1s);
+		@include animation-iteration-count(infinite);*/
+	}
+	&.loader-dot-white {
+		background: $color-white;
+		&:after, 
+		&:before{
+			background: $color-white;
+		}
+	}
+	&:before{
+		right: 7px;
+	}
+	&:after{
+		left: 7px;
+		/*@include animation-delay(300ms);*/
+	}
+	i{
+		/*@include animation-name(opacity);
+		@include animation-duration(1s);
+		@include animation-iteration-count(infinite);*/
+
+		&:nth-child(2) {
+			/*@include animation-delay(100ms); */
+		}
+
+		&:nth-child(3) {
+			/*@include animation-delay(300ms); */
+		}
+	}
+}

@@ -1,0 +1,36 @@
+.label-for-checkbox,
+.label-for-radio{
+	position:relative;
+	padding:1px 0 1px 25px;
+	float:left;
+	line-height:18px;
+	.label-input-wrapper{
+		position:absolute;
+		left:0;
+		top:50%;
+		margin:-9px 0 0;
+		float:left;
+	}
+	&.disabled{
+		cursor:default;
+		@include opacity(0.70);
+		.label-input-wrapper{
+			@include opacity(0.70);
+		}
+	}
+}
+.label-for-checkbox{
+	.label-input-wrapper{
+		width:18px;
+		height:18px;
+		margin:-9px 0 0;
+	}
+}
+.label-for-radio{
+	padding-left:21px;
+	.label-input-wrapper{
+		width:16px;
+		height:16px;
+		margin:-8px 0 0;
+	}
+}

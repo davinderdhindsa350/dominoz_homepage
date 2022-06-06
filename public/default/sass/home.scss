@@ -1,0 +1,13 @@
+@import "pages/in/theme-default/home.scss";
+
+html {
+  font-size: 12px;
+}
+
+body {
+  margin: 0 !important;
+  background: $color-white;
+  -webkit-text-size-adjust: none !important;
+  -ms-text-size-adjust: none !important;
+  -moz-text-size-adjust: none !important;
+}

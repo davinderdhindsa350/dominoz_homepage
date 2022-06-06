@@ -1,0 +1,95 @@
+{
+  "recommendedItems": {
+    "data": [
+      { "menuCode": "PIZ0171", "sizeCode": "Ek", "type": "PIZZA" },
+      { "menuCode": "PIZ0117", "sizeCode": "PC", "type": "PIZZA" },
+      { "menuCode": "PIZ0119", "sizeCode": "Fa", "type": "PIZZA" },
+      { "menuCode": "PIZ0120", "sizeCode": "Pa", "type": "PIZZA" },
+      { "menuCode": "PIZ0124", "sizeCode": "Xx", "type": "PIZZA" },
+      { "menuCode": "PIZ0125", "sizeCode": "Vw", "type": "PIZZA" },
+      { "menuCode": "PIZ0171", "sizeCode": "Ah", "type": "PIZZA" },
+      { "menuCode": "PIZ5119", "sizeCode": "Ej", "type": "PIZZA" },
+      { "menuCode": "PIZ5106", "sizeCode": "Eq", "type": "PIZZA" },
+      { "menuCode": "PIZ0167", "sizeCode": "Ah", "type": "PIZZA" }
+    ]
+  },
+  "upsell": {
+    "data": [
+      {
+        "crustId": "1",
+        "sizeId": "7",
+        "suggestions": [
+          {
+            "id": 3,
+            "upsellId": 1,
+            "itemId": "7",
+            "type": "SIZE",
+            "position": 3
+          },
+          {
+            "id": 2,
+            "upsellId": 1,
+            "itemId": "115",
+            "type": "CRUST",
+            "position": 2
+          },
+          {
+            "id": 4,
+            "upsellId": 1,
+            "itemId": "3",
+            "type": "CRUST",
+            "position": 4
+          },
+          {
+            "id": 9,
+            "upsellId": 1,
+            "itemId": "8",
+            "type": "SIZE",
+            "position": 9
+          },
+          {
+            "id": 1,
+            "upsellId": 1,
+            "itemId": "51",
+            "type": "TOPPINGS",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "crustId": "3",
+        "sizeId": "7",
+        "suggestions": [
+          {
+            "id": 7,
+            "upsellId": 2,
+            "itemId": "51",
+            "type": "TOPPINGS",
+            "position": 7
+          },
+          {
+            "id": 8,
+            "upsellId": 2,
+            "itemId": "1",
+            "type": "CRUST",
+            "position": 8
+          },
+          {
+            "id": 5,
+            "upsellId": 2,
+            "itemId": "115",
+            "type": "CRUST",
+            "position": 5
+          },
+          {
+            "id": 6,
+            "upsellId": 2,
+            "itemId": "7",
+            "type": "SIZE",
+            "position": 6
+          }
+        ]
+      }
+    ]
+  }
+}

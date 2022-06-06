@@ -1,0 +1,7 @@
+$product-page: "home";
+
+$font-version-fontello: "001" !default;
+$font-path-font-icon: "font-icons-#{$product-page}/" !default;
+
+$common-image-path: "#{$images-folder-path}#{$product-country}/common/#{$product-page}";
+$image-path: "#{$images-folder-path}#{$product-country}/#{$product-theme}/#{$product-page}";

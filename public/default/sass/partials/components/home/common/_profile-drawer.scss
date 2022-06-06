@@ -1,0 +1,110 @@
+.profile-drawer {
+  min-height: 88px !important;
+  background: #fafafa;
+  padding: 24px 16px;
+  justify-content: space-between;
+  align-items: center;
+  &.jcfs {
+    justify-content: flex-start;
+  }
+  .carousel {
+    width: 54%;
+  }
+  .carousel__slide {
+    justify-content: flex-start !important;
+  }
+  .login-text{
+    align-items: flex-start;
+  }
+  > .user-cover {
+    align-items: center;
+    // border: 1px solid #f0f0f0;
+    border-radius: 16px;
+    width: 32px;
+    min-width: 32px;
+    height: 32px;
+    background: #666666;
+    &.light-blue {
+      background: linear-gradient(180deg, #69adde 0%, #398dc9 100%) !important;
+    }
+    .jfi-user {
+      color: $body-base;
+      margin-left: 10px;
+      display: block;
+      &::before {
+        margin-top: 7px;
+      }
+    }
+  }
+  > .profile-drawer-btn {
+    padding: 11px 23px !important
+  }
+  .user-detail {
+    margin-left: 15px;
+    width: 70%;
+  }
+  .edit-btn{
+    color: $color-secondary;
+  }
+}
+.light-blue-background {
+  background: #ecf7ff;
+}
+
+.text-align-right {
+  text-align: right;
+}
+
+.profile-Modal {
+  > .modal-container {
+    padding: 0px !important;
+    position: inherit;
+    > .overflow-hide {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      flex: 0;
+      height: 100%;
+    }
+  }
+  > .modal-container div {
+    > .modal-header {
+      flex-grow: 0;
+    }
+    > .modal-body {
+      padding-left: 16px;
+      padding-right: 16px;
+      flex-grow: 1;
+    }
+    > .modal-footer {
+      padding-left: 16px;
+      padding-right: 16px;
+      margin-bottom: 16px;
+      flex-grow: 0;
+    }
+  }
+}
+
+
+.profile-Modal .modal-container{
+  margin: 0;
+  transform: translateY(0);
+}
+
+.profile-drawer {
+  .carousel__pagination-button {
+    background-color: #7a7a7a !important;
+    color: rgba(248, 248, 248, 0.64)
+  }
+  .carousel__pagination-button--active {
+    background-color: #000 !important
+  }
+  .login-cars-dots {
+    padding-left: 20px;
+    line-height: 18px;
+  }
+  .carousel {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}

@@ -1,0 +1,51 @@
+.horizontal-product-main {
+  > .carousel {
+    text-align: start !important;
+    
+    .carousel__viewport {
+      overflow: scroll;
+      scrollbar-width: none;
+      scrollbar-gutter: auto;
+      width: 100%;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      > .carousel__track {
+        gap: 12px;
+        transform: none !important;
+        > .carousel__slide {
+          justify-content: start !important;
+          max-width: 360px;
+          &:first-child {
+            padding-left: 6px;
+          }
+          &:last-child {
+            .card-item {
+              @include my-screen(very-small) {
+                padding-right: 12px !important;
+              }
+            }
+          }
+        }
+      }
+    }
+    .card-item {
+      @include my-screen(very-small) {
+        max-width: 100%;
+        margin-left: 6px;
+        margin-right: 6px !important;
+      }
+    }
+  }
+  .carousel__slide{
+    display: flex;
+    align-items: flex-start;
+    min-width: 290px;
+    &:only-child {
+      
+      @include my-screen(very-small) {
+        width: calc(100% - 12px) !important;
+      }
+    }
+  }
+}

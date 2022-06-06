@@ -1,0 +1,48 @@
+{
+  "data": [
+    {
+      "imageUrl": "https://api.dominos.co.in/prod-olo-api/images/Home_Paytm_20210901.jpg",
+      "cta": {
+        "redirection": "menu",
+        "link": {
+          "category_id": 1,
+          "item_id": 4091
+        }
+      }
+    },
+    {
+      "imageUrl": "https://api.dominos.co.in/prod-olo-api/images/Home_Paytm_20210901.jpg",
+      "cta": {
+        "redirection": "EDV",
+        "link": {
+          "size_id": 7
+        }
+      }
+    },
+    {
+      "imageUrl": "https://api.dominos.co.in/prod-olo-api/images/Home_Paytm_20210901.jpg",
+      "cta": {
+        "redirection": "OFFERS"
+      }
+    },
+    {
+      "imageUrl": "https://api.dominos.co.in/prod-olo-api/images/Home_Paytm_20210901.jpg",
+      "cta": {
+        "redirection": "MENU",
+        "link": {
+          "category_id": 4,
+          "item_id": 25
+        }
+      }
+    }
+  ],
+  "moduleProps": {
+    "type": "HORIZONTAL_BANNERS",
+    "aspectRatio": 1,
+    "itemsInScreen": 1.75,
+    "title": "Payment Offers",
+    "subTitle": "View All",
+    "maxWidth": "95vw",
+    "maxHeight": "131px"
+  }
+}

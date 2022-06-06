@@ -1,0 +1,84 @@
+.scroll-content-x {
+    overflow: hidden;
+    ul {
+        white-space: nowrap; 
+        overflow-x: auto;
+        li {
+            white-space: normal;
+            display: inline-block;
+            vertical-align: top;
+        }
+    }
+}
+
+.unit-with-arrows {
+    padding: 13px 16px;
+    display: inline-block;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.unit-no-arrows {
+    padding: 0px 14px;
+    display: inline-block;
+    vertical-align: top;
+    cursor: pointer;
+    &:first-child {
+        padding-left: 0;
+    }
+    &:last-child {
+        padding-right: 0;
+    }
+}
+
+.two-col {
+    .unit-with-arrows {
+        max-width: 49.5%;
+        min-width: 49.5%;
+    }
+    .unit-no-arrows {
+        max-width: 49.5%;
+        min-width: 49.5%;
+        @include my-screen(very-small) {
+            max-width: 100%;
+            min-width: 100%;
+            padding: 0;
+            margin-top: 20px;
+        }
+    } 
+}
+.three-col {
+    .unit-with-arrows {
+        max-width: 31.00%;
+        min-width: 258px;
+    }
+    .unit-no-arrows {
+        max-width: 33%;
+        min-width: 258px;
+    } 
+}
+.no-content-scroll {
+    .two-col {
+        .unit-no-arrows {
+            padding: 14px;
+
+            &:nth-child(odd) {
+                padding-left: 0;
+            }
+            &:nth-child(even) {
+                padding-right: 0;
+            }
+
+             @include my-screen(very-small) {
+                max-width: 100%;
+                min-width: 100%;
+                padding: 0;
+                margin-top: 20px;
+                &:nth-child(odd), &:nth-child(even) {
+                    padding-left: 0;
+                    padding-right: 0;
+                }
+            }
+        } 
+    }
+}

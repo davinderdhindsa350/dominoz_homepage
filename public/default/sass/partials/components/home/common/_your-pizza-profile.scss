@@ -1,0 +1,61 @@
+.pizza-profile-main {
+    > .pizza-body {
+      border: 1px solid $color-border;
+      box-sizing: border-box;
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      min-width: 336px;
+      min-height: 193px;
+      > .pizza-profile-footer {
+        border-top: 1px solid $color-border;
+        min-height: 60px;
+        color: $color-slaty;
+        padding: 14px 18px;
+      }
+    }
+    > .pizza-profile-title span {
+      cursor: pointer;
+    }
+    > .jfi-arrow-line {
+      &::before {
+        transform: rotate(90deg);
+      }
+    }
+  }
+  
+  .pizza-ask {
+    > .pizza-crust {
+      > .pizza-btn {
+        border: 1px solid $color-border;
+        box-sizing: border-box;
+        padding: 7px 8px 8px 8px;
+        border-radius: 6px;
+        min-height: 32px;
+        background: #ffffff;
+        margin-right: 8px;
+        margin-top: 4px;
+        font-size: 12px;
+        box-shadow: 0px 2px 3px rgb(0 0 0 / 7%);
+        cursor: pointer;
+      }
+    }
+  }
+  
+  .selected-pizza-crust {
+    background: black !important;
+    color: #ffffff !important;
+  }
+  
+  .doyouknow-align {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .doyouknow-align div {
+    > .bulb-font {
+      font-size: 30px !important;
+    }
+  }

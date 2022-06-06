@@ -1,0 +1,24 @@
+strong,
+.bold {
+  font-family: $font-family-bold;
+  font-weight: normal;
+}
+
+// .semi-bold {
+//   font-family: $font-family-semibold;
+//   font-weight: normal;
+// }
+
+.medium {
+  font-family: $font-family-medium;
+  font-weight: normal;
+}
+
+.normal {
+  font-family: $font-family-base !important;
+  font-weight: normal;
+}
+
+.font-default {
+  font-family: $font-family-default;
+}

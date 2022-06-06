@@ -1,0 +1,48 @@
+{
+    "data": [
+      {
+        "categoryType": 0,
+        "data": [
+          {
+            "image": "Choco_Lava.png",
+            "defaultPrice": 99,
+            "buttonText": "ADD TO CART",
+            "code": "CAKE02",
+            "description": "Chocolate lovers delight! Indulgent, gooey molten lava inside chocolate cake",
+            "defaultCrustPrice": 0,
+            "disableClick": false,
+            "isCustomizable": false,
+            "sortOrder": 0,
+            "name": " Choco Lava Cake",
+            "isReplaceable": false,
+            "id": 44,
+            "productType": 0
+          },
+          {
+            "image": "Butterscotch.png",
+            "defaultPrice": 99,
+            "buttonText": "ADD TO CART",
+            "code": "DST0089",
+            "description": "Sweet temptation! Butterscotch flavored mousse ",
+            "defaultCrustPrice": 0,
+            "disableClick": false,
+            "isCustomizable": false,
+            "sortOrder": 0,
+            "name": "Butterscotch Mousse Cake",
+            "isReplaceable": false,
+            "id": 56,
+            "productType": 0
+          }
+        ],
+        "categoryName": "Dessert",
+        "categoryId": 26
+      }
+    ],
+    "moduleProps": {
+      "title": "Desserts",
+      "type": "VERTICAL_PRODUCT_SCROLL",
+      "cardType": "video/static",
+      "aspectRatio": 1,
+      "itemsInScreen": 1.75
+    }
+  }

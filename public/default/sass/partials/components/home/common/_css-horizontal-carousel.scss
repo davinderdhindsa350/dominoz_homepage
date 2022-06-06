@@ -1,0 +1,47 @@
+.h-carousel-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  scroll-behavior: smooth;
+}
+
+.h-carousel-slider {
+  display: flex;
+  width: 100vw;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-right: 12px;
+  padding-left: 12px;
+}
+
+.image-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.h-carousel-item {
+  display: flex;
+  //   object-fit: cover;
+  margin-right: 8px;
+  @include my-screen(very-small) {
+    min-width: 360px;
+  }
+}
+
+/* when only one item */
+.h-carousel-item:first-child:nth-last-child(1) {
+  /* -or- h-carousel-item:only-child { */
+  min-width: 360px;
+  margin-right: 0px;
+  @include my-screen(very-small) {
+    min-width: 100%;
+  }
+}
+
+/* when two items */
+.h-carousel-item:first-child:nth-last-child(2),
+.h-carousel-item:first-child:nth-last-child(2) ~ .h-carousel-item {
+  flex: 1;
+  @include my-screen(very-small) {
+    min-width: calc(100vw - 12%);
+  }
+}

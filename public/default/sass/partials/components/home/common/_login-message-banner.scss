@@ -1,0 +1,42 @@
+.login-message-banner {
+  .login-message-item {
+    align-items: center;
+    width: 100%;
+    background: #005491;
+    border-radius: 8px;
+    color: $color-white;
+    height: 56px;
+    margin-left: 1px;
+    margin-right: 1px;
+    .login-text{
+      align-items: flex-start;
+    }
+    > .user-icon {
+      height: 32px;
+      width: 32px;
+      min-width: 32px;
+      background: linear-gradient(180deg, #69adde 0%, #398dc9 100%);
+      border-radius: 50%;
+      align-items: center;
+      .jfi-user {
+        &::before {
+          margin-top: 6px;
+        }
+      }
+    }
+    > button {
+      margin-left: auto;
+      margin-right: -7px;
+    }
+    .carousel {
+      @include my-screen(very-small) {
+        width: 64%;
+      }
+      display: flex;
+      flex-direction: column-reverse;
+    }
+    .carousel__slide {
+      justify-content: flex-start !important;
+    }
+  }
+}

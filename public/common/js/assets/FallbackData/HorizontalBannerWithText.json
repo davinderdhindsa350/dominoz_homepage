@@ -1,0 +1,42 @@
+[
+    {
+      "title": "Veg Pizza",
+      "image_url": "http://images.dominos.co.in/images/vegpizza",
+      "cta": {
+        "redirection": "menu",
+        "link": {
+          "category_id": 1
+        }
+      }
+    },
+    {
+      "title": "Non Veg Pizza",
+      "image_url": "http://images.dominos.co.in/images/nonvegpizza",
+      "cta": {
+        "redirection": "menu",
+        "link": {
+          "category_id": 2
+        }
+      }
+    },
+    {
+      "title": "Sides",
+      "image_url": "http://images.dominos.co.in/images/sides",
+      "cta": {
+        "redirection": "menu",
+        "link": {
+          "category_id": 3
+        }
+      }
+    },
+    {
+      "title": "Desserts",
+      "image_url": "http://images.dominos.co.in/images/desserts",
+      "cta": {
+        "redirection": "menu",
+        "link": {
+          "category_id": 4
+        }
+      }
+    }
+  ]

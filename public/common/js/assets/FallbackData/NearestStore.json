@@ -1,0 +1,34 @@
+{
+  "data": {
+    "id": "64039",
+    "online": 1,
+    "phone": "8149366888",
+    "name": "THE ONE INDORE",
+    "address": "THE ONE INDORE MADHYA PRADESH First Floor Shop No 101 The One Plot No 5 RNT Marg Indore 452001 Madhya Pradesh",
+    "latitude": 22.717311,
+    "longitude": 75.872868,
+    "handleStoreOffline": false,
+    "city": "INDORE",
+    "region": "MADHYA PRADESH",
+    "edvEnable": true,
+    "edvMixMatch": true,
+    "allowedDeliveryTypeCodes": ["P", "DINEIN", "D", "CURB"],
+    "connectivityStatus": 1,
+    "addressComponent": {
+      "city": "Indore",
+      "postalCode": "452013",
+      "country": "India",
+      "state": "Madhya Pradesh",
+      "locality": "Rishi Vihar",
+      "district": "Indore",
+      "latitude": 22.719567999999998875182427582331001758575439453125,
+      "longitude": 75.8577269999999970195858622901141643524169921875
+    },
+    "displayAddress": "Rishi Vihar, Indore",
+    "footerAddress": "243, Risi Nagar",
+    "advanceOrderStoreId": "64039",
+    "pickUpEnable": true,
+    "deliveryEnable": true
+  },
+  "status": true
+}

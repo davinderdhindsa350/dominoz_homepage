@@ -1,0 +1,276 @@
+{
+  "status": "SUCCESS",
+  "applicable": {
+    "title": "Available Offers",
+    "subTitle": "Select a coupon and add items to your cart",
+    "data": [
+      {
+        "promoCode": "CHEESE75",
+        "title": "30% Off on your order",
+        "description": "Get 30% Off on your order upto Rs.75.",
+        "tnc": {
+          "label": "T&C",
+          "links": [
+            {
+              "href": "/promo-service/ve1/promo/CHEESE75/tnc",
+              "action": "tncpopup"
+            }
+          ]
+        },
+        "personalized": true,
+        "displayMsgOnSelection": "Add items to your cart and proceed. The offer will be applied in your cart.",
+        "displayPopUpHeader": "Offer Selected",
+        "couponDetail": {
+          "promoCode": "NCRM068",
+          "minCartValue": 250,
+          "templatePrefix": "percentDiscount",
+          "discountPercentage": 30,
+          "maxCap": 75,
+          "promoTitle": "30% discount upto Rs.75",
+          "restrictedCategories": ["PIZZA-MANIA"],
+          "excludedCategories": ["SIDECOMBOS"],
+          "lastUpdatedTime": "2022-02-17 2:21:37 PM"
+        },
+        "text": "30% Off on your order",
+        "couponCode": "CHEESE75"
+      },
+      {
+        "promoCode": "DEAL50",
+        "title": "50% Off on your order",
+        "description": "Get 50% Off on your order upto Rs.100.",
+        "tnc": {
+          "label": "T&C",
+          "links": [
+            {
+              "href": "/promo-service/ve1/promo/DEAL50/tnc",
+              "action": "tncpopup"
+            }
+          ]
+        },
+        "personalized": true,
+        "displayMsgOnSelection": "Add items to your cart and proceed. The offer will be applied in your cart.",
+        "displayPopUpHeader": "Offer Selected",
+        "couponDetail": {
+          "promoCode": "NCRM053",
+          "minCartValue": 99,
+          "templatePrefix": "percentDiscount",
+          "discountPercentage": 50,
+          "maxCap": 100,
+          "promoTitle": "50% Off upto Rs. 100",
+          "allowedCategories": ["PIZZA"],
+          "excludedProducts": [
+            "23",
+            "29",
+            "56",
+            "4043",
+            "4044",
+            "4110",
+            "4260",
+            "4270",
+            "4280",
+            "4290",
+            "4300",
+            "4310",
+            "4340",
+            "4350",
+            "4360",
+            "4370",
+            "4380",
+            "4390",
+            "4400",
+            "4410",
+            "4420",
+            "4529",
+            "4530",
+            "4531",
+            "4532",
+            "4533",
+            "4534",
+            "4535",
+            "4536",
+            "4537",
+            "4538",
+            "4539",
+            "4540",
+            "4541",
+            "4542",
+            "4543",
+            "4558",
+            "4559",
+            "4560",
+            "4561",
+            "4562",
+            "4563",
+            "4564",
+            "4565",
+            "4569",
+            "4570",
+            "4571",
+            "4572",
+            "4573",
+            "4574",
+            "4575",
+            "4576",
+            "4577",
+            "4578",
+            "4580",
+            "4581",
+            "4582",
+            "4583",
+            "4586",
+            "4587",
+            "4588",
+            "4589",
+            "4590",
+            "4591",
+            "4592",
+            "4593",
+            "4594",
+            "4595",
+            "4596",
+            "4597",
+            "4598",
+            "4599",
+            "4600",
+            "4601",
+            "4602",
+            "4604",
+            "4608",
+            "4619",
+            "4620",
+            "4621",
+            "4622",
+            "4623",
+            "4624",
+            "4625",
+            "4626",
+            "4627",
+            "4628",
+            "4629",
+            "4630",
+            "4631"
+          ],
+          "lastUpdatedTime": "2021-12-24 5:52:28 PM"
+        },
+        "text": "50% Off on your order",
+        "couponCode": "DEAL50"
+      },
+      {
+        "promoCode": "FREEBG",
+        "title": "ITEM OFF COUPOn",
+        "description": "Discount",
+        "tnc": {
+          "label": "T&C",
+          "links": [
+            {
+              "href": "/promo-service/ve1/promo/FREEBG/tnc",
+              "action": "tncpopup"
+            }
+          ]
+        },
+        "personalized": false,
+        "displayMsgOnSelection": "Add items to your cart and proceed. The offer will be applied in your cart.",
+        "displayPopUpHeader": "Offer Selected",
+        "couponDetail": {
+          "promoCode": "NCRM028",
+          "minCartValue": 100,
+          "templatePrefix": "fixDiscount",
+          "promoTitle": "item off coupon",
+          "discountAmount": 100,
+          "lastUpdatedTime": "2022-02-22 10:42:56 AM"
+        },
+        "text": "ITEM OFF COUPOn",
+        "couponCode": "FREEBG"
+      },
+      {
+        "promoCode": "PIZZA50",
+        "title": "Flat Rs.50 Off on your order.",
+        "description": "Get Flat Rs.50 Off on your dine in and takeaway orders of Rs.200 and above.",
+        "tnc": {
+          "label": "T&C",
+          "links": [
+            {
+              "href": "/promo-service/ve1/promo/PIZZA50/tnc",
+              "action": "tncpopup"
+            }
+          ]
+        },
+        "personalized": false,
+        "displayMsgOnSelection": "Add items to your cart and proceed. The offer will be applied in your cart.",
+        "displayPopUpHeader": "Offer Selected",
+        "couponDetail": {
+          "promoCode": "NCRM029",
+          "minCartValue": 200,
+          "templatePrefix": "fixDiscount",
+          "promoTitle": "50 off ",
+          "discountAmount": 50,
+          "restrictedCategories": ["PIZZA-MANIA"],
+          "excludedCategories": ["SIDECOMBOS"],
+          "lastUpdatedTime": "2022-02-17 6:36:21 PM"
+        },
+        "text": "Flat Rs.50 Off on your order.",
+        "couponCode": "PIZZA50"
+      }
+    ]
+  },
+  "milestoneOffers": {
+    "title": "Available Offers",
+    "subTitle": "Select a coupon and add items to your cart",
+    "data": [
+      {
+        "promoCode": "FREEPIZZA",
+        "title": "Milestone coupon",
+        "description": "Discount",
+        "tnc": {
+          "label": "T&C",
+          "links": [
+            {
+              "href": "/promo-service/ve1/promo/FREEPIZZA/tnc",
+              "action": "tncpopup"
+            }
+          ]
+        },
+        "personalized": true,
+        "displayMsgOnSelection": "Add items to your cart and proceed. The offer will be applied in your cart.",
+        "displayPopUpHeader": "Offer Selected",
+        "milestonesCouponDTOList": [
+          {
+            "basePromoCode": "NCRM069",
+            "title": "Get 25% Off upto Rs.125 & 2nd order FREE",
+            "description": "Use this coupon to get a Free Pizza on your next order.",
+            "baseCouponDTO": {
+              "promoCode": "NCRM069",
+              "minCartValue": 600,
+              "templatePrefix": "percentDiscount",
+              "discountPercentage": 25,
+              "maxCap": 125,
+              "promoTitle": "25% discount upto Rs.125",
+              "excludedCategories": ["SIDECOMBOS"],
+              "lastUpdatedTime": "2022-02-18 1:18:53 AM"
+            },
+            "redeemed": false
+          },
+          {
+            "basePromoCode": "NCRM061",
+            "title": "Free Pizza Unlocked",
+            "description": "Use this coupon to get a Free Pizza of upto Rs.200.",
+            "baseCouponDTO": {
+              "promoCode": "NCRM061",
+              "minCartValue": 90,
+              "templatePrefix": "percentDiscount",
+              "discountPercentage": 100,
+              "maxCap": 200,
+              "promoTitle": "100% Off upto 200",
+              "allowedCategories": ["PIZZA"],
+              "excludedCategories": ["SIDECOMBOS"],
+              "lastUpdatedTime": "2021-08-25 12:52:43 PM"
+            },
+            "redeemed": false
+          }
+        ],
+        "text": "Milestone coupon",
+        "couponCode": "FREEPIZZA"
+      }
+    ]
+  }
+}

@@ -1,0 +1,112 @@
+// Card conditions for Search type card
+.card-item-search {
+  border: 1px solid #dddddd;
+  box-shadow: 0px 4px 12px rgb(0 0 0 / 10%);
+  &:first-child {
+    border-top-color: #dddddd;
+  }
+  margin-bottom: 16px;
+  margin-top: 0 !important;
+  min-width: 360px;
+  @include my-screen(very-small) {
+    border-left-color: transparent;
+    border-right-color: transparent;
+    width: 100vw;
+  }
+  .customizations {
+    border-top: 1px solid #ddd;
+  }
+  .card-size {
+    height: auto;
+    min-width: auto;
+  }
+  .c-img-wrap {
+    height: 102px;
+    width: 95px;
+    overflow: hidden;
+    @include border-radius(6px, 6px, 6px, 6px);
+    position: absolute;
+    right: 12px;
+    top: 12px;
+  }
+  .customization-pop-content {
+    .c-img-wrap {
+      height: 100%;
+      width: 100%;
+      position: relative;
+      right: 0;
+      top: 0;
+    }
+
+
+    .pizza-info {
+      max-width: 100%;
+      min-height: auto;
+      margin: auto;
+      position: relative;
+      margin-top: 8px;
+      margin-bottom: 10px;
+      .pizza-title {
+        color: $color-white;
+      }
+      .pizza-desc {
+        color: #ddd;
+        &:after {
+          background-color: #070403;
+        }
+      }
+    }
+  }
+
+  .card-content {
+    position: relative;
+  }
+  .at-botm {
+    position: relative;
+    padding-bottom: 12px;
+  }
+  .pizza-info {
+    max-width: 67%;
+    min-height: 116px;
+    margin: 0;
+    position: relative;
+    .pizza-title {
+      line-height: 20px;
+      font-size: 14px;
+      color: $color-base;
+    }
+    .pizza-desc {
+      color: #7a7a7a;
+      text-align: unset;
+      max-height: 48px;
+      &:after {
+        background-color: $color-white;
+      }
+    }
+    .search-cards-only {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+  }
+  .extra-info {
+    position: absolute;
+    right: 24px;
+    top: 23px;
+  }
+  .selected-info {
+    margin: 12px 0 0 0;
+    padding: 0;
+  }
+  .lft-arr {
+    background-color: $color-white;
+  }
+  .evd-price {
+    .striked-price {
+      color: rgba(122, 122, 122, 0.5);
+    }
+  }
+  .tag-customize {
+    padding: 2px 4px 2px 2px;
+  }
+}

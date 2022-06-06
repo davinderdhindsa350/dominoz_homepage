@@ -1,0 +1,99 @@
+@include animation("notification-holder", 4s, "linear");
+
+.notification-holder {
+  position: fixed;
+  will-change: transform;
+  z-index: 9999;
+  transition: 0.3s ease-in-out;
+  -webkit-transform: translate(0%, -120%);
+  -moz-transform: translate(0%, -120%);
+  -o-transform: translate(0%, -120%);
+  -ms-transform: translate(0%, -120%);
+  transform: translate(0%, -120%);
+  width: 100%;
+  float: left;
+  &.pos-tl {
+    top: -200px;
+    left: 0;
+  }
+  &.active {
+    &.pos-tl {
+      top: 0;
+      -webkit-transform: translate(0%, 0%);
+      -moz-transform: translate(0%, 0%);
+      -o-transform: translate(0%, 0%);
+      -ms-transform: translate(0%, 0%);
+      transform: translate(0%, 0%);
+    }
+  }
+  .close-icon-holder {
+    width: 17px;
+    height: 28px;
+    position: absolute;
+    right: -21px;
+    top: 0;
+    cursor: pointer;
+    .jfi-cross:before {
+      font-size: 28px;
+      height: 28px;
+      line-height: 28px;
+    }
+  }
+  .notification-content {
+    padding: 21px 65px 21px 21px;
+    @media only screen and (max-width: 640px) {
+      padding-right: 35px;
+    }
+    $default-theme: map-get($notification-theme-values, "default");
+    background: map-get($default-theme, "background-color");
+    color: map-get($default-theme, "text-color");
+    @each $theme in $notification-theme-name {
+      &.theme-#{$theme} {
+        $theme-codes: map-get($notification-theme-values, #{$theme});
+        background: map-get($theme-codes, "background-color");
+        color: map-get($theme-codes, "text-color");
+      }
+    }
+  }
+
+  &[data-fromat="format-tipsy"],
+  &.format-tipsy,
+  &[data-fromat="format-tipsy-full"],
+  &.format-tipsy-full {
+    -webkit-transform: translate(-50%, -100%);
+    -moz-transform: translate(-50%, -100%);
+    -o-transform: translate(-50%, -100%);
+    -ms-transform: translate(-50%, -100%);
+    transform: translate(-50%, -100%);
+    left: 50%;
+    width: auto;
+    &.active {
+      &.pos-tl {
+        -webkit-transform: translate(-50%, 0);
+        -moz-transform: translate(-50%, 0);
+        -o-transform: translate(-50%, 0);
+        -ms-transform: translate(-50%, 0);
+        transform: translate(-50%, 0);
+      }
+    }
+    .notification-content {
+      padding: 2px 36px 2px 10px;
+      font-size: 12px;
+    }
+    .close-icon-holder {
+      width: 10px;
+      height: 18px;
+      position: absolute;
+      cursor: pointer;
+      .jfi-cross:before {
+        font-size: 20px;
+        height: 20px;
+        line-height: 24px;
+      }
+    }
+  }
+  &[data-fromat="format-tipsy-full"],
+  &.format-tipsy-full {
+    width: 100%;
+  }
+}

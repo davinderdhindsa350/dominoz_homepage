@@ -1,0 +1,31 @@
+.order-type-wrap {
+  > .order-type-btn {
+    flex-grow: 1;
+    cursor: pointer;
+    padding: 5px 6px;
+    transition: 0.3s;
+    min-height: 42px !important;
+    text-align: center;
+    background-color: #fafafa;
+    border: 1px solid #f0f0f0;
+    
+    &:nth-child(3) {
+      @include border-radius(0px, 6px, 6px, 0px);
+    }
+  }
+}
+
+.order-type-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px !important;
+  -webkit-tap-highlight-color: transparent;
+  > .btn-1 {
+    &.active {
+      border-radius: 6px;
+      background: $color-base;
+      color: $color-white;
+    }
+  }
+}

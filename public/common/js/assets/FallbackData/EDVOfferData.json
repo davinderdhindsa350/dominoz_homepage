@@ -1,0 +1,32 @@
+{
+  "data": [
+    {
+      "id": "4",
+      "imageUrl": "https://api.dominos.co.in/prod-olo-api/images/EDV_National_20211220.jpeg",
+      "links": [
+        {
+          "href": "7",
+          "action": "edv"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "imageUrl": "https://api.dominos.co.in/prod-olo-api/images/EDV_National_20211220.jpeg",
+      "links": [
+        {
+          "href": "7",
+          "action": "edv"
+        }
+      ]
+    }
+  ],
+  "moduleProps": {
+    "type": "HORIZONTAL_BANNERS",
+    "aspectRatio": 1,
+    "itemsInScreen": 1,
+    "title": "Everyday Value Offer",
+    "maxWidth": "93vw",
+    "maxHeight": "180px"
+  }
+}

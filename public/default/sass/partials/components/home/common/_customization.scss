@@ -1,0 +1,113 @@
+.cust-modal-wrap {
+  .modal-container {
+    padding: 0;
+  }
+}
+.fixed-top {
+  position: fixed;
+  will-change: transform;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 350px;
+}
+.botm-pushed-content {
+  position: relative;
+  margin-top: 30vh;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+.name-desc {
+  position: relative;
+  padding-bottom: 6px;
+  padding-top: 8px;
+  background-color: transparent;
+  &.sticky-top {
+    background-color: $color-white;
+    .card-botm-gradient {
+      background: transparent;
+    }
+    .pizza-info {
+      .pizza-title,
+      .pizza-desc {
+        color: $color-white;
+      }
+    }
+  }
+  .card-botm-gradient {
+    height: 90px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin-left: -16px;
+  }
+  .pizza-info {
+    position: relative;
+    z-index: 1;
+  }
+}
+.customised-details {
+  z-index: 1;
+  background: $color-white;
+  padding: 16px;
+  position: fixed;
+  will-change: transform;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  box-shadow: 0px -2px 8px rgba(0, 0, 0, 0.13);
+  -webkit-box-shadow: 0px -2px 8px rgba(0, 0, 0, 0.13);
+  -moz-box-shadow: 0px -2px 8px rgba(0, 0, 0, 0.13);
+}
+.custm-cta {
+  &.btn {
+    font-size: $fs-14;
+    padding: 11px 20px 11px 20px;
+  }
+}
+.base-price {
+  width: 200px;
+  text-align: right;
+}
+
+.replace-topping-arrow {
+  color: $color-slaty;
+  > .jfi-arrow-line {
+    &::before {
+      transform: rotate(270deg);
+    }
+  }
+}
+
+.extra-cheese-burst{
+  background: linear-gradient(0deg, #EEFAFF, #EEFAFF), #FFFFFF;
+}
+
+.no-combination{
+  position: fixed;
+  will-change: transform;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(10, 10, 10, 0.8);
+  transition: opacity 0.3s ease;
+  .no-combination-msg{
+    position: absolute;
+    top: 31%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: $color-white;
+    border-radius: 10px;
+  }
+}
+
+.overflow-y-hiddn{
+  .modal-container{
+    overflow-y: hidden !important;
+  }
+}

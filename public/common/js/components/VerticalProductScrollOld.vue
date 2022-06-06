@@ -1,0 +1,1395 @@
+/* not being used */
+<template>
+  <div v-if="isCorrectModuleType" class="cards-wrap clearfix">
+    <h3 class="card-catg-name">{{ moduleProps.title }}</h3>
+    totalItems == {{ totalItems }} totalPrice == {{ totalPrice }}
+    <div class="cards-holder">
+      <product-card
+        v-for="(cdata, i) in cardsData"
+        :key="i"
+        :cardRounded="vpsProps.cardRounded"
+        :cardSearchable="vpsProps.cardSearchable"
+        :cdata="cdata"
+        :moduleProps="moduleProps"
+        @getItem="updateItem"
+      ></product-card>
+    </div>
+  </div>
+</template>
+
+<script>
+import ProductCard from "./ProductCard.vue";
+import { ref, onMounted } from "vue";
+import { useStore } from "vuex";
+
+export default {
+  name: "VerticalProductScrollOld",
+  props: ["dataService"],
+
+  // data will come in props, like this
+  // dataService = {
+  //   "data": {
+  //     "categoryName": "Bestsellers",
+  //     "categoryId": 1,
+  //     "categoryType": 2,
+  //     "data": []
+  //   },
+  //   "moduleProps": {
+  //     "title": "Best Sellers",
+  //     "type": "VERTICAL_PRODUCT_SCROLL",
+  //     "cardType": "video/static",
+  //     "aspectRatio": 1,
+  //     "itemsInScreen": 1.75
+  //   }
+  // }
+
+  components: {
+    ProductCard,
+  },
+  setup(props) {
+    console.time("cardBuilding");
+
+    const store = useStore();
+
+    const vpsProps = ref({
+      cardRounded: false,
+      cardSearchable: false,
+    });
+    const isCorrectModuleType = ref(false);
+
+    const dataService = props.dataService || {
+      // @todo: remove when actual props start populating from rex-ui
+      data: {
+        categoryName: "Bestsellers",
+        categoryId: 1,
+        categoryType: 2,
+        data: [
+          {
+            id: 1,
+            selectedCrustId: "1",
+            description: "Classic delight with 100% real mozzarella cheese",
+            name: "Margherita",
+            image: "new_margherita_2502.jpg",
+            defaultPrice: 0,
+            crust: [
+              {
+                sizes: [
+                  {
+                    price: 99,
+                    description: "Serves 1",
+                    name: "Regular",
+                    sizeId: 6,
+                    code: "BHT07",
+                    uniqGeneratedPriceId: "6#1#1",
+                    uniqGeneratedToppingsPriceId: {
+                      65: "65#6",
+                    },
+                  },
+                  {
+                    price: 199,
+                    description: "Serves 2",
+                    name: "Medium",
+                    sizeId: 7,
+                    code: "BHT95",
+                    uniqGeneratedPriceId: "7#1#1",
+                    uniqGeneratedToppingsPriceId: {
+                      65: "65#7",
+                    },
+                  },
+                  {
+                    price: 395,
+                    description: "Serves 4",
+                    name: "Large",
+                    sizeId: 8,
+                    code: "BHT125",
+                    uniqGeneratedPriceId: "8#1#1",
+                    uniqGeneratedToppingsPriceId: {
+                      65: "65#8",
+                    },
+                  },
+                ],
+                crustId: 1,
+                name: "New Hand Tossed 1",
+                code: "BHT",
+              },
+              {
+                sizes: [
+                  {
+                    price: 249,
+                    description: "Serves 2",
+                    name: "Medium",
+                    sizeId: 7,
+                    code: "TC95",
+                    uniqGeneratedPriceId: "7#3#1",
+                    uniqGeneratedToppingsPriceId: {
+                      65: "65#7",
+                    },
+                  },
+                ],
+                crustId: 3,
+                name: "Wheat Thin Crust",
+                code: "WTC",
+              },
+              {
+                sizes: [
+                  {
+                    price: 174,
+                    description: "Serves 1",
+                    name: "Regular",
+                    sizeId: 6,
+                    code: "CB07",
+                    uniqGeneratedPriceId: "6#115#1",
+                    uniqGeneratedToppingsPriceId: {
+                      65: "65#6",
+                    },
+                  },
+                  {
+                    price: 298,
+                    description: "Serves 2",
+                    name: "Medium",
+                    sizeId: 7,
+                    code: "BU95",
+                    uniqGeneratedPriceId: "7#115#1",
+                    uniqGeneratedToppingsPriceId: {
+                      65: "65#7",
+                    },
+                  },
+                ],
+                crustId: 115,
+                name: "Cheese Burst",
+                code: "CB",
+              },
+              {
+                sizes: [
+                  {
+                    price: 129,
+                    description: "Serves 1",
+                    name: "Regular",
+                    sizeId: 6,
+                    code: "FP07",
+                    uniqGeneratedPriceId: "6#128#1",
+                    uniqGeneratedToppingsPriceId: {
+                      65: "65#6",
+                    },
+                  },
+                  {
+                    price: 239,
+                    description: "Serves 2",
+                    name: "Medium",
+                    sizeId: 7,
+                    code: "FP95",
+                    uniqGeneratedPriceId: "7#128#1",
+                    uniqGeneratedToppingsPriceId: {
+                      65: "65#7",
+                    },
+                  },
+                ],
+                crustId: 128,
+                name: "Fresh Pan Pizza",
+                code: "FPP",
+              },
+              {
+                sizes: [
+                  {
+                    price: 99,
+                    description: "Serves 1",
+                    name: "Regular",
+                    sizeId: 6,
+                    code: "HT07",
+                    uniqGeneratedPriceId: "6#391#1",
+                    uniqGeneratedToppingsPriceId: {
+                      65: "65#6",
+                    },
+                  },
+                ],
+                crustId: 391,
+                name: "Classic Hand Tossed",
+                code: "CHT",
+              },
+            ],
+            selectedSizeId: "6",
+            isCustomizable: true,
+            isReplaceable: false,
+            allowedToppings: [65],
+            productType: 0,
+            defaultCrustPrice: 239,
+            code: "PIZ0117",
+            sizeCode: "PC",
+            sortOrder: 1,
+            disableClick: false,
+            buttonText: "ADD TO CART",
+          },
+          {
+            id: 6,
+            selectedCrustId: "3",
+            description:
+              "Delightful combination of onion, capsicum, tomato & grilled mushroom",
+            name: "Farmhouse",
+            image: "farmhouse.png",
+            defaultPrice: 0,
+            crust: [
+              {
+                sizes: [
+                  {
+                    price: 215,
+                    description: "Serves 1",
+                    name: "Regular",
+                    sizeId: 6,
+                    code: "BHT07",
+                    uniqGeneratedPriceId: "6#1#6",
+                    uniqGeneratedToppingsPriceId: {
+                      103: "103#6",
+                    },
+                  },
+                  {
+                    price: 395,
+                    description: "Serves 2",
+                    name: "Medium",
+                    sizeId: 7,
+                    code: "BHT95",
+                    uniqGeneratedPriceId: "7#1#6",
+                    uniqGeneratedToppingsPriceId: {
+                      103: "103#7",
+                    },
+                  },
+                  {
+                    price: 595,
+                    description: "Serves 4",
+                    name: "Large",
+                    sizeId: 8,
+                    code: "BHT125",
+                    uniqGeneratedPriceId: "8#1#6",
+                    uniqGeneratedToppingsPriceId: {
+                      103: "103#8",
+                    },
+                  },
+                ],
+                crustId: 1,
+                name: "New Hand Tossed",
+                code: "BHT",
+              },
+              {
+                sizes: [
+                  {
+                    price: 445,
+                    description: "Serves 2",
+                    name: "Medium",
+                    sizeId: 7,
+                    code: "TC95",
+                    uniqGeneratedPriceId: "7#3#6",
+                    uniqGeneratedToppingsPriceId: {
+                      103: "103#7",
+                    },
+                  },
+                ],
+                crustId: 3,
+                name: "Wheat Thin Crust",
+                code: "WTC",
+              },
+              {
+                sizes: [
+                  {
+                    price: 290,
+                    description: "Serves 1",
+                    name: "Regular",
+                    sizeId: 6,
+                    code: "CB07",
+                    uniqGeneratedPriceId: "6#115#6",
+                    uniqGeneratedToppingsPriceId: {
+                      103: "103#6",
+                    },
+                  },
+                  {
+                    price: 494,
+                    description: "Serves 2",
+                    name: "Medium",
+                    sizeId: 7,
+                    code: "BU95",
+                    uniqGeneratedPriceId: "7#115#6",
+                    uniqGeneratedToppingsPriceId: {
+                      103: "103#7",
+                    },
+                  },
+                ],
+                crustId: 115,
+                name: "Cheese Burst",
+                code: "CB",
+              },
+              {
+                sizes: [
+                  {
+                    price: 245,
+                    description: "Serves 1",
+                    name: "Regular",
+                    sizeId: 6,
+                    code: "FP07",
+                    uniqGeneratedPriceId: "6#128#6",
+                    uniqGeneratedToppingsPriceId: {
+                      103: "103#6",
+                    },
+                  },
+                  {
+                    price: 435,
+                    description: "Serves 2",
+                    name: "Medium",
+                    sizeId: 7,
+                    code: "FP95",
+                    uniqGeneratedPriceId: "7#128#6",
+                    uniqGeneratedToppingsPriceId: {
+                      103: "103#7",
+                    },
+                  },
+                ],
+                crustId: 128,
+                name: "Fresh Pan Pizza",
+                code: "FPP",
+              },
+              {
+                sizes: [
+                  {
+                    price: 215,
+                    description: "Serves 1",
+                    name: "Regular",
+                    sizeId: 6,
+                    code: "HT07",
+                    uniqGeneratedPriceId: "6#391#6",
+                    uniqGeneratedToppingsPriceId: {
+                      103: "103#6",
+                    },
+                  },
+                ],
+                crustId: 391,
+                name: "Classic Hand Tossed",
+                code: "CHT",
+              },
+            ],
+            defaultToppings: [64, 65, 66, 101],
+            selectedSizeId: "7",
+            isCustomizable: false,
+            isReplaceable: true,
+            allowedToppings: [103],
+            productType: 0,
+            defaultCrustPrice: 435,
+            code: "PIZ0119",
+            sizeCode: "Fa",
+            sortOrder: 2,
+            disableClick: false,
+            buttonText: "ADD TO CART",
+          },
+          {
+            id: 4026,
+            selectedCrustId: "115",
+            description:
+              "A delectable combination of sweet & juicy golden corn",
+            name: "Cheese n Corn",
+            image: "new_cheese_n_corn.jpg",
+            defaultPrice: 0,
+            crust: [
+              {
+                sizes: [
+                  {
+                    price: 165,
+                    description: "Serves 1",
+                    name: "Regular",
+                    sizeId: 6,
+                    code: "BHT07",
+                    uniqGeneratedPriceId: "6#1#4026",
+                    uniqGeneratedToppingsPriceId: {
+                      65: "65#6",
+                    },
+                  },
+                  {
+                    price: 305,
+                    description: "Serves 2",
+                    name: "Medium",
+                    sizeId: 7,
+                    code: "BHT95",
+                    uniqGeneratedPriceId: "7#1#4026",
+                    uniqGeneratedToppingsPriceId: {
+                      65: "65#7",
+                    },
+                  },
+                  {
+                    price: 495,
+                    description: "Serves 4",
+                    name: "Large",
+                    sizeId: 8,
+                    code: "BHT125",
+                    uniqGeneratedPriceId: "8#1#4026",
+                    uniqGeneratedToppingsPriceId: {
+                      65: "65#8",
+                    },
+                  },
+                ],
+                crustId: 1,
+                name: "New Hand Tossed",
+                code: "BHT",
+              },
+              {
+                sizes: [
+                  {
+                    price: 355,
+                    description: "Serves 2",
+                    name: "Medium",
+                    sizeId: 7,
+                    code: "TC95",
+                    uniqGeneratedPriceId: "7#3#4026",
+                    uniqGeneratedToppingsPriceId: {
+                      65: "65#7",
+                    },
+                  },
+                ],
+                crustId: 3,
+                name: "Wheat Thin Crust",
+                code: "WTC",
+              },
+              {
+                sizes: [
+                  {
+                    price: 240,
+                    description: "Serves 1",
+                    name: "Regular",
+                    sizeId: 6,
+                    code: "CB07",
+                    uniqGeneratedPriceId: "6#115#4026",
+                    uniqGeneratedToppingsPriceId: {
+                      65: "65#6",
+                    },
+                  },
+                  {
+                    price: 404,
+                    description: "Serves 2",
+                    name: "Medium",
+                    sizeId: 7,
+                    code: "BU95",
+                    uniqGeneratedPriceId: "7#115#4026",
+                    uniqGeneratedToppingsPriceId: {
+                      65: "65#7",
+                    },
+                  },
+                ],
+                crustId: 115,
+                name: "Cheese Burst",
+                code: "CB",
+              },
+              {
+                sizes: [
+                  {
+                    price: 195,
+                    description: "Serves 1",
+                    name: "Regular",
+                    sizeId: 6,
+                    code: "FP07",
+                    uniqGeneratedPriceId: "6#128#4026",
+                    uniqGeneratedToppingsPriceId: {
+                      65: "65#6",
+                    },
+                  },
+                  {
+                    price: 345,
+                    description: "Serves 2",
+                    name: "Medium",
+                    sizeId: 7,
+                    code: "FP95",
+                    uniqGeneratedPriceId: "7#128#4026",
+                    uniqGeneratedToppingsPriceId: {
+                      65: "65#7",
+                    },
+                  },
+                ],
+                crustId: 128,
+                name: "Fresh Pan Pizza",
+                code: "FPP",
+              },
+              {
+                sizes: [
+                  {
+                    price: 165,
+                    description: "Serves 1",
+                    name: "Regular",
+                    sizeId: 6,
+                    code: "HT07",
+                    uniqGeneratedPriceId: "6#391#4026",
+                    uniqGeneratedToppingsPriceId: {
+                      65: "65#6",
+                    },
+                  },
+                ],
+                crustId: 391,
+                name: "Classic Hand Tossed",
+                code: "CHT",
+              },
+            ],
+            defaultToppings: [70, 75],
+            selectedSizeId: "7",
+            isCustomizable: true,
+            isReplaceable: false,
+            allowedToppings: [65],
+            productType: 0,
+            defaultCrustPrice: 345,
+            code: "PIZ0128",
+            sizeCode: "Ah",
+            sortOrder: 3,
+            disableClick: false,
+            buttonText: "ADD TO CART",
+          },
+          {
+            id: 4052,
+            selectedCrustId: "1",
+            description: "Pepper barbecue chicken for that extra zing",
+            name: "Pepper Barbecue Chicken",
+            image: "new_pepper_barbeque_chicken.jpg",
+            defaultPrice: 0,
+            crust: [
+              {
+                sizes: [
+                  {
+                    price: 185,
+                    description: "Serves 1",
+                    name: "Regular",
+                    sizeId: 6,
+                    code: "BHT07",
+                    uniqGeneratedPriceId: "6#1#4052",
+                    uniqGeneratedToppingsPriceId: {
+                      65: "65#6",
+                    },
+                  },
+                  {
+                    price: 335,
+                    description: "Serves 2",
+                    name: "Medium",
+                    sizeId: 7,
+                    code: "BHT95",
+                    uniqGeneratedPriceId: "7#1#4052",
+                    uniqGeneratedToppingsPriceId: {
+                      65: "65#7",
+                    },
+                  },
+                  {
+                    price: 535,
+                    description: "Serves 4",
+                    name: "Large",
+                    sizeId: 8,
+                    code: "BHT125",
+                    uniqGeneratedPriceId: "8#1#4052",
+                    uniqGeneratedToppingsPriceId: {
+                      65: "65#8",
+                    },
+                  },
+                ],
+                crustId: 1,
+                name: "New Hand Tossed",
+                code: "BHT",
+              },
+              {
+                sizes: [
+                  {
+                    price: 385,
+                    description: "Serves 2",
+                    name: "Medium",
+                    sizeId: 7,
+                    code: "TC95",
+                    uniqGeneratedPriceId: "7#3#4052",
+                    uniqGeneratedToppingsPriceId: {
+                      65: "65#7",
+                    },
+                  },
+                ],
+                crustId: 3,
+                name: "Wheat Thin Crust",
+                code: "WTC",
+              },
+              {
+                sizes: [
+                  {
+                    price: 260,
+                    description: "Serves 1",
+                    name: "Regular",
+                    sizeId: 6,
+                    code: "CB07",
+                    uniqGeneratedPriceId: "6#115#4052",
+                    uniqGeneratedToppingsPriceId: {
+                      65: "65#6",
+                    },
+                  },
+                  {
+                    price: 434,
+                    description: "Serves 2",
+                    name: "Medium",
+                    sizeId: 7,
+                    code: "BU95",
+                    uniqGeneratedPriceId: "7#115#4052",
+                    uniqGeneratedToppingsPriceId: {
+                      65: "65#7",
+                    },
+                  },
+                ],
+                crustId: 115,
+                name: "Cheese Burst",
+                code: "CB",
+              },
+              {
+                sizes: [
+                  {
+                    price: 215,
+                    description: "Serves 1",
+                    name: "Regular",
+                    sizeId: 6,
+                    code: "FP07",
+                    uniqGeneratedPriceId: "6#128#4052",
+                    uniqGeneratedToppingsPriceId: {
+                      65: "65#6",
+                    },
+                  },
+                  {
+                    price: 375,
+                    description: "Serves 2",
+                    name: "Medium",
+                    sizeId: 7,
+                    code: "FP95",
+                    uniqGeneratedPriceId: "7#128#4052",
+                    uniqGeneratedToppingsPriceId: {
+                      65: "65#7",
+                    },
+                  },
+                ],
+                crustId: 128,
+                name: "Fresh Pan Pizza",
+                code: "FPP",
+              },
+              {
+                sizes: [
+                  {
+                    price: 185,
+                    description: "Serves 1",
+                    name: "Regular",
+                    sizeId: 6,
+                    code: "HT07",
+                    uniqGeneratedPriceId: "6#391#4052",
+                    uniqGeneratedToppingsPriceId: {
+                      65: "65#6",
+                    },
+                  },
+                ],
+                crustId: 391,
+                name: "Classic Hand Tossed",
+                code: "CHT",
+              },
+            ],
+            defaultToppings: [75, 393],
+            selectedSizeId: "7",
+            isCustomizable: true,
+            isReplaceable: false,
+            allowedToppings: [65],
+            productType: 1,
+            defaultCrustPrice: 375,
+            code: "PIZ5119",
+            sizeCode: "Ej",
+            sortOrder: 4,
+            disableClick: false,
+            buttonText: "ADD TO CART",
+          },
+          {
+            id: 7,
+            selectedCrustId: "1",
+            description:
+              "Flavorful trio of juicy paneer, crisp capsicum with spicy red paprika",
+            name: "Peppy Paneer",
+            image: "new_peppy_paneer.jpg",
+            defaultPrice: 0,
+            crust: [
+              {
+                sizes: [
+                  {
+                    price: 215,
+                    description: "Serves 1",
+                    name: "Regular",
+                    sizeId: 6,
+                    code: "BHT07",
+                    uniqGeneratedPriceId: "6#1#7",
+                    uniqGeneratedToppingsPriceId: {
+                      103: "103#6",
+                    },
+                  },
+                  {
+                    price: 395,
+                    description: "Serves 2",
+                    name: "Medium",
+                    sizeId: 7,
+                    code: "BHT95",
+                    uniqGeneratedPriceId: "7#1#7",
+                    uniqGeneratedToppingsPriceId: {
+                      103: "103#7",
+                    },
+                  },
+                  {
+                    price: 595,
+                    description: "Serves 4",
+                    name: "Large",
+                    sizeId: 8,
+                    code: "BHT125",
+                    uniqGeneratedPriceId: "8#1#7",
+                    uniqGeneratedToppingsPriceId: {
+                      103: "103#8",
+                    },
+                  },
+                ],
+                crustId: 1,
+                name: "New Hand Tossed",
+                code: "BHT",
+              },
+              {
+                sizes: [
+                  {
+                    price: 445,
+                    description: "Serves 2",
+                    name: "Medium",
+                    sizeId: 7,
+                    code: "TC95",
+                    uniqGeneratedPriceId: "7#3#7",
+                    uniqGeneratedToppingsPriceId: {
+                      103: "103#7",
+                    },
+                  },
+                ],
+                crustId: 3,
+                name: "Wheat Thin Crust",
+                code: "WTC",
+              },
+              {
+                sizes: [
+                  {
+                    price: 290,
+                    description: "Serves 1",
+                    name: "Regular",
+                    sizeId: 6,
+                    code: "CB07",
+                    uniqGeneratedPriceId: "6#115#7",
+                    uniqGeneratedToppingsPriceId: {
+                      103: "103#6",
+                    },
+                  },
+                  {
+                    price: 494,
+                    description: "Serves 2",
+                    name: "Medium",
+                    sizeId: 7,
+                    code: "BU95",
+                    uniqGeneratedPriceId: "7#115#7",
+                    uniqGeneratedToppingsPriceId: {
+                      103: "103#7",
+                    },
+                  },
+                ],
+                crustId: 115,
+                name: "Cheese Burst",
+                code: "CB",
+              },
+              {
+                sizes: [
+                  {
+                    price: 245,
+                    description: "Serves 1",
+                    name: "Regular",
+                    sizeId: 6,
+                    code: "FP07",
+                    uniqGeneratedPriceId: "6#128#7",
+                    uniqGeneratedToppingsPriceId: {
+                      103: "103#6",
+                    },
+                  },
+                  {
+                    price: 435,
+                    description: "Serves 2",
+                    name: "Medium",
+                    sizeId: 7,
+                    code: "FP95",
+                    uniqGeneratedPriceId: "7#128#7",
+                    uniqGeneratedToppingsPriceId: {
+                      103: "103#7",
+                    },
+                  },
+                ],
+                crustId: 128,
+                name: "Fresh Pan Pizza",
+                code: "FPP",
+              },
+              {
+                sizes: [
+                  {
+                    price: 215,
+                    description: "Serves 1",
+                    name: "Regular",
+                    sizeId: 6,
+                    code: "HT07",
+                    uniqGeneratedPriceId: "6#391#7",
+                    uniqGeneratedToppingsPriceId: {
+                      103: "103#6",
+                    },
+                  },
+                ],
+                crustId: 391,
+                name: "Classic Hand Tossed",
+                code: "CHT",
+              },
+            ],
+            defaultToppings: [64, 67, 68],
+            selectedSizeId: "7",
+            isCustomizable: true,
+            isReplaceable: false,
+            allowedToppings: [103],
+            productType: 0,
+            defaultCrustPrice: 435,
+            code: "PIZ0120",
+            sizeCode: "Pa",
+            sortOrder: 5,
+            disableClick: false,
+            buttonText: "ADD TO CART",
+          },
+          {
+            id: 137,
+            selectedCrustId: "1",
+            description:
+              "The awesome foursome! Golden corn, black olives, capsicum, red paprika",
+            name: "Veggie Paradise",
+            image: "new_veggie_paradise.jpg",
+            defaultPrice: 0,
+            crust: [
+              {
+                sizes: [
+                  {
+                    price: 215,
+                    description: "Serves 1",
+                    name: "Regular",
+                    sizeId: 6,
+                    code: "BHT07",
+                    uniqGeneratedPriceId: "6#1#137",
+                    uniqGeneratedToppingsPriceId: {
+                      103: "103#6",
+                    },
+                  },
+                  {
+                    price: 395,
+                    description: "Serves 2",
+                    name: "Medium",
+                    sizeId: 7,
+                    code: "BHT95",
+                    uniqGeneratedPriceId: "7#1#137",
+                    uniqGeneratedToppingsPriceId: {
+                      103: "103#7",
+                    },
+                  },
+                  {
+                    price: 595,
+                    description: "Serves 4",
+                    name: "Large",
+                    sizeId: 8,
+                    code: "BHT125",
+                    uniqGeneratedPriceId: "8#1#137",
+                    uniqGeneratedToppingsPriceId: {
+                      103: "103#8",
+                    },
+                  },
+                ],
+                crustId: 1,
+                name: "New Hand Tossed",
+                code: "BHT",
+              },
+              {
+                sizes: [
+                  {
+                    price: 445,
+                    description: "Serves 2",
+                    name: "Medium",
+                    sizeId: 7,
+                    code: "TC95",
+                    uniqGeneratedPriceId: "7#3#137",
+                    uniqGeneratedToppingsPriceId: {
+                      103: "103#7",
+                    },
+                  },
+                ],
+                crustId: 3,
+                name: "Wheat Thin Crust",
+                code: "WTC",
+              },
+              {
+                sizes: [
+                  {
+                    price: 290,
+                    description: "Serves 1",
+                    name: "Regular",
+                    sizeId: 6,
+                    code: "CB07",
+                    uniqGeneratedPriceId: "6#115#137",
+                    uniqGeneratedToppingsPriceId: {
+                      103: "103#6",
+                    },
+                  },
+                  {
+                    price: 494,
+                    description: "Serves 2",
+                    name: "Medium",
+                    sizeId: 7,
+                    code: "BU95",
+                    uniqGeneratedPriceId: "7#115#137",
+                    uniqGeneratedToppingsPriceId: {
+                      103: "103#7",
+                    },
+                  },
+                ],
+                crustId: 115,
+                name: "Cheese Burst",
+                code: "CB",
+              },
+              {
+                sizes: [
+                  {
+                    price: 245,
+                    description: "Serves 1",
+                    name: "Regular",
+                    sizeId: 6,
+                    code: "FP07",
+                    uniqGeneratedPriceId: "6#128#137",
+                    uniqGeneratedToppingsPriceId: {
+                      103: "103#6",
+                    },
+                  },
+                  {
+                    price: 435,
+                    description: "Serves 2",
+                    name: "Medium",
+                    sizeId: 7,
+                    code: "FP95",
+                    uniqGeneratedPriceId: "7#128#137",
+                    uniqGeneratedToppingsPriceId: {
+                      103: "103#7",
+                    },
+                  },
+                ],
+                crustId: 128,
+                name: "Fresh Pan Pizza",
+                code: "FPP",
+              },
+              {
+                sizes: [
+                  {
+                    price: 215,
+                    description: "Serves 1",
+                    name: "Regular",
+                    sizeId: 6,
+                    code: "HT07",
+                    uniqGeneratedPriceId: "6#391#137",
+                    uniqGeneratedToppingsPriceId: {
+                      103: "103#6",
+                    },
+                  },
+                ],
+                crustId: 391,
+                name: "Classic Hand Tossed",
+                code: "CHT",
+              },
+            ],
+            defaultToppings: [64, 70, 102, 108],
+            selectedSizeId: "7",
+            isCustomizable: true,
+            isReplaceable: true,
+            allowedToppings: [103],
+            productType: 0,
+            defaultCrustPrice: 435,
+            code: "PIZ0125",
+            sizeCode: "Vw",
+            sortOrder: 6,
+            disableClick: false,
+            buttonText: "ADD TO CART",
+          },
+          {
+            id: 11,
+            selectedCrustId: "1",
+            description:
+              "Black olives, capsicum, onion, grilled mushroom, corn, tomato, jalapeno & extra cheese",
+            name: "Veg Extravaganza",
+            image: "new_veg_extravaganza.jpg",
+            defaultPrice: 0,
+            crust: [
+              {
+                sizes: [
+                  {
+                    price: 235,
+                    description: "Serves 1",
+                    name: "Regular",
+                    sizeId: 6,
+                    code: "BHT07",
+                    uniqGeneratedPriceId: "6#1#11",
+                    uniqGeneratedToppingsPriceId: {
+                      103: "103#6",
+                    },
+                  },
+                  {
+                    price: 450,
+                    description: "Serves 2",
+                    name: "Medium",
+                    sizeId: 7,
+                    code: "BHT95",
+                    uniqGeneratedPriceId: "7#1#11",
+                    uniqGeneratedToppingsPriceId: {
+                      103: "103#7",
+                    },
+                  },
+                  {
+                    price: 695,
+                    description: "Serves 4",
+                    name: "Large",
+                    sizeId: 8,
+                    code: "BHT125",
+                    uniqGeneratedPriceId: "8#1#11",
+                    uniqGeneratedToppingsPriceId: {
+                      103: "103#8",
+                    },
+                  },
+                ],
+                crustId: 1,
+                name: "New Hand Tossed",
+                code: "BHT",
+              },
+              {
+                sizes: [
+                  {
+                    price: 500,
+                    description: "Serves 2",
+                    name: "Medium",
+                    sizeId: 7,
+                    code: "TC95",
+                    uniqGeneratedPriceId: "7#3#11",
+                    uniqGeneratedToppingsPriceId: {
+                      103: "103#7",
+                    },
+                  },
+                ],
+                crustId: 3,
+                name: "Wheat Thin Crust",
+                code: "WTC",
+              },
+              {
+                sizes: [
+                  {
+                    price: 310,
+                    description: "Serves 1",
+                    name: "Regular",
+                    sizeId: 6,
+                    code: "CB07",
+                    uniqGeneratedPriceId: "6#115#11",
+                    uniqGeneratedToppingsPriceId: {
+                      103: "103#6",
+                    },
+                  },
+                  {
+                    price: 549,
+                    description: "Serves 2",
+                    name: "Medium",
+                    sizeId: 7,
+                    code: "BU95",
+                    uniqGeneratedPriceId: "7#115#11",
+                    uniqGeneratedToppingsPriceId: {
+                      103: "103#7",
+                    },
+                  },
+                ],
+                crustId: 115,
+                name: "Cheese Burst",
+                code: "CB",
+              },
+              {
+                sizes: [
+                  {
+                    price: 265,
+                    description: "Serves 1",
+                    name: "Regular",
+                    sizeId: 6,
+                    code: "FP07",
+                    uniqGeneratedPriceId: "6#128#11",
+                    uniqGeneratedToppingsPriceId: {
+                      103: "103#6",
+                    },
+                  },
+                  {
+                    price: 490,
+                    description: "Serves 2",
+                    name: "Medium",
+                    sizeId: 7,
+                    code: "FP95",
+                    uniqGeneratedPriceId: "7#128#11",
+                    uniqGeneratedToppingsPriceId: {
+                      103: "103#7",
+                    },
+                  },
+                ],
+                crustId: 128,
+                name: "Fresh Pan Pizza",
+                code: "FPP",
+              },
+              {
+                sizes: [
+                  {
+                    price: 235,
+                    description: "Serves 1",
+                    name: "Regular",
+                    sizeId: 6,
+                    code: "HT07",
+                    uniqGeneratedPriceId: "6#391#11",
+                    uniqGeneratedToppingsPriceId: {
+                      103: "103#6",
+                    },
+                  },
+                ],
+                crustId: 391,
+                name: "Classic Hand Tossed",
+                code: "CHT",
+              },
+            ],
+            defaultToppings: [61, 64, 65, 66, 69, 70, 71, 75],
+            selectedSizeId: "7",
+            isCustomizable: true,
+            isReplaceable: true,
+            allowedToppings: [103],
+            productType: 0,
+            defaultCrustPrice: 490,
+            code: "PIZ0124",
+            sizeCode: "Xx",
+            sortOrder: 7,
+            disableClick: false,
+            buttonText: "ADD TO CART",
+          },
+          {
+            id: 4053,
+            selectedCrustId: "1",
+            description:
+              "American classic! Spicy, herbed chicken sausage on pizza",
+            name: "Chicken Sausage",
+            image: "new_chicken_sausage.jpg",
+            defaultPrice: 0,
+            crust: [
+              {
+                sizes: [
+                  {
+                    price: 165,
+                    description: "Serves 1",
+                    name: "Regular",
+                    sizeId: 6,
+                    code: "BHT07",
+                    uniqGeneratedPriceId: "6#1#4053",
+                    uniqGeneratedToppingsPriceId: {
+                      65: "65#6",
+                    },
+                  },
+                  {
+                    price: 305,
+                    description: "Serves 2",
+                    name: "Medium",
+                    sizeId: 7,
+                    code: "BHT95",
+                    uniqGeneratedPriceId: "7#1#4053",
+                    uniqGeneratedToppingsPriceId: {
+                      65: "65#7",
+                    },
+                  },
+                  {
+                    price: 495,
+                    description: "Serves 4",
+                    name: "Large",
+                    sizeId: 8,
+                    code: "BHT125",
+                    uniqGeneratedPriceId: "8#1#4053",
+                    uniqGeneratedToppingsPriceId: {
+                      65: "65#8",
+                    },
+                  },
+                ],
+                crustId: 1,
+                name: "New Hand Tossed",
+                code: "BHT",
+              },
+              {
+                sizes: [
+                  {
+                    price: 355,
+                    description: "Serves 2",
+                    name: "Medium",
+                    sizeId: 7,
+                    code: "TC95",
+                    uniqGeneratedPriceId: "7#3#4053",
+                    uniqGeneratedToppingsPriceId: {
+                      65: "65#7",
+                    },
+                  },
+                ],
+                crustId: 3,
+                name: "Wheat Thin Crust",
+                code: "WTC",
+              },
+              {
+                sizes: [
+                  {
+                    price: 240,
+                    description: "Serves 1",
+                    name: "Regular",
+                    sizeId: 6,
+                    code: "CB07",
+                    uniqGeneratedPriceId: "6#115#4053",
+                    uniqGeneratedToppingsPriceId: {
+                      65: "65#6",
+                    },
+                  },
+                  {
+                    price: 404,
+                    description: "Serves 2",
+                    name: "Medium",
+                    sizeId: 7,
+                    code: "BU95",
+                    uniqGeneratedPriceId: "7#115#4053",
+                    uniqGeneratedToppingsPriceId: {
+                      65: "65#7",
+                    },
+                  },
+                ],
+                crustId: 115,
+                name: "Cheese Burst",
+                code: "CB",
+              },
+              {
+                sizes: [
+                  {
+                    price: 195,
+                    description: "Serves 1",
+                    name: "Regular",
+                    sizeId: 6,
+                    code: "FP07",
+                    uniqGeneratedPriceId: "6#128#4053",
+                    uniqGeneratedToppingsPriceId: {
+                      65: "65#6",
+                    },
+                  },
+                  {
+                    price: 345,
+                    description: "Serves 2",
+                    name: "Medium",
+                    sizeId: 7,
+                    code: "FP95",
+                    uniqGeneratedPriceId: "7#128#4053",
+                    uniqGeneratedToppingsPriceId: {
+                      65: "65#7",
+                    },
+                  },
+                ],
+                crustId: 128,
+                name: "Fresh Pan Pizza",
+                code: "FPP",
+              },
+              {
+                sizes: [
+                  {
+                    price: 165,
+                    description: "Serves 1",
+                    name: "Regular",
+                    sizeId: 6,
+                    code: "HT07",
+                    uniqGeneratedPriceId: "6#391#4053",
+                    uniqGeneratedToppingsPriceId: {
+                      65: "65#6",
+                    },
+                  },
+                ],
+                crustId: 391,
+                name: "Classic Hand Tossed",
+                code: "CHT",
+              },
+            ],
+            defaultToppings: [75, 396],
+            selectedSizeId: "7",
+            isCustomizable: true,
+            isReplaceable: false,
+            allowedToppings: [65],
+            productType: 1,
+            defaultCrustPrice: 345,
+            code: "PIZ5106",
+            sizeCode: "Eq",
+            sortOrder: 8,
+            disableClick: false,
+            buttonText: "ADD TO CART",
+          },
+        ],
+      },
+      moduleProps: {
+        title: "Best Sellers",
+        type: "VERTICAL_PRODUCT_SCROLL",
+        cardType: "video/static",
+        aspectRatio: 1,
+        itemsInScreen: 1.75,
+      },
+    };
+    let cardsData = dataService.data.data || [];
+    let moduleProps = dataService.moduleProps || {
+      title: "",
+      type: "",
+      cardType: "",
+      aspectRatio: "",
+      itemsInScreen: "",
+    };
+
+    const checkModuleTypeToRender = () => {
+      if (moduleProps.type === "VERTICAL_PRODUCT_SCROLL") {
+        isCorrectModuleType.value = true;
+      }
+    };
+
+    const updateModulePropTitle = (payload) =>
+      store.dispatch("Cart/updateModulePropTitle", payload);
+
+    onMounted(() => {
+      checkModuleTypeToRender();
+      updateModulePropTitle(moduleProps.title);
+      console.timeEnd("cardBuilding");
+    });
+
+    const order = ref([]);
+    const totalItems = ref(0);
+    const totalPrice = ref(0);
+
+    const updateItem = (temp) => {
+      const find = order.value.findIndex((element) => element.id == temp.id);
+      if (find == -1) {
+        order.value.push(temp);
+      } else if (temp.quantity == 0) {
+        order.value.splice(find, 1);
+      } else {
+        order.value[find].quantity = temp.quantity;
+      }
+      updateTotal();
+    };
+    const updateTotal = () => {
+      let total = 0;
+      let noOfItems = 0;
+      order.value.forEach((element) => {
+        total += element.price * element.quantity;
+        noOfItems += element.quantity;
+      });
+      totalItems.value = noOfItems;
+      totalPrice.value = total;
+
+      store.commit("Cart/upTodateLocalStorage", order);
+    };
+
+    return {
+      vpsProps,
+      isCorrectModuleType,
+      cardsData,
+      moduleProps,
+      order,
+      totalItems,
+      totalPrice,
+      updateItem,
+      updateTotal,
+    };
+  },
+};
+</script>
